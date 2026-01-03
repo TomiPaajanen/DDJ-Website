@@ -36,7 +36,7 @@ export default function Home() {
       <div className="row align-items-center mb-5">
         <div className="col-md-8">
           <h1 className="display-4">Welcome to Our Japanese School! Kek</h1>
-          <p className="lead">ASD ASD ASD ASD ASD ASD ASDA ASDASDAS DASDASDASDA DASD ASDASD ASDAS DASDASD ASDASDASDASD ADASD ADASD ASDASDAD ASD</p>
+          <p className="lead">ASD ASD ASD ASD ASD ASD ASDA ASDASDAS DASDASDASDA DASD ASDASD ASDAS DASDASD ASDASDASDASD ADASD ADASD ASDASDAD ASDE</p>
         </div>
         <div className="col-md-4 text-center">
           <a href="/booking" className="btn btn-success btn-lg">Get Started Free</a>
