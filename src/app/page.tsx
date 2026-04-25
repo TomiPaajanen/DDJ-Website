@@ -1,231 +1,164 @@
 import Link from 'next/link'
+import Image from 'next/image';
 
 export default function Home() {
+  const teachers = [1, 2, 3, 4, 5].map(n => ({
+    id: n,
+    name: `Sensei ${n}`,
+    bio: 'Native speaker with 5+ years teaching experience in conversational and written Japanese.',
+  }));
+
   return (
-    <div className="container-fluid mt-5">
+    <div className="container-fluid px-0">
 
-      <div className="row justify-content-between align-items-start mb-3">
-
-        {/* Logo Column */}
-        <div className="col-auto"> {/* 'col-auto' makes the column just wide enough for the logo */}
-          <Link href="/" className="d-block">
-            <img
-              src="https://t4.ftcdn.net/jpg/06/96/89/13/240_F_696891328_utj80ZwXsdy8SloC9IBaFGDIcGNBrEze.jpg"  // Logo URL
-              alt="Company Logo"
-              height="40"
-              className="d-inline-block align-text-top"
-            />
-          </Link>
-        </div>
-
-        {/* Sub-pages Column */}
-        <div className="col-auto"> {/* 'col-auto' makes the column just wide enough for the nav */}
-          <nav className="d-inline-block">
-            <ul className="nav nav-pills gap-2"> {/* Simple nav pills, spaced */}
-              <li className="nav-item"><a className="nav-link" href="/about">About</a></li>
-              <li className="nav-item"><a className="nav-link" href="/teachers">Teachers</a></li>
-              <li className="nav-item"><a className="nav-link" href="/booking">Booking</a></li>
-              <li className="nav-item"><a className="nav-link" href="/plans">Plans</a></li>
-              <li className="nav-item"><a className="nav-link" href="/faq">FAQ</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      {/* Row 2 */}
-      <div className="row align-items-center mb-5">
-        <div className="col-md-8">
-          <h1 className="display-4">Welcome to Our Japanese School! Kek</h1>
-          <p className="lead">ASD ASD ASD ASD ASD ASD ASDA ASDASDAS DASDASDASDA DASD ASDASD ASDAS DASDASD ASDASDASDASD ADASD ADASD ASDASDAD ASDE</p>
-        </div>
-        <div className="col-md-4 text-center">
-          <a href="/booking" className="btn btn-success btn-lg">Get Started Free</a>
-        </div>
-      </div>
-
-      {/* Row 3 */}
-      <div className="row align-items-center mb-5">
-        <div className="col-md-6">  {/* Image */}
-          <img
-            src="https://web-japan.org/kidsweb/explore/calendar/assets/img/april/schoolyear01.jpg"  // Your image URL
-            alt="Student Learning Japanese"
-            className="img-fluid rounded"
+      {/* Navbar */}
+      <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm px-4 py-3">
+        <Link href="/" className="navbar-brand">
+          <Image
+            src="https://t4.ftcdn.net/jpg/06/96/89/13/240_F_696891328_utj80ZwXsdy8SloC9IBaFGDIcGNBrEze.jpg"
+            alt="Company Logo"
+            height={40}
+            width={120}
+            className="d-inline-block"
           />
+        </Link>
+        <div className="ms-auto">
+          <ul className="nav gap-1">
+            {['About', 'Teachers', 'Booking', 'Plans', 'FAQ'].map(page => (
+              <li key={page} className="nav-item">
+                <a className="nav-link fw-medium text-dark" href={`/${page.toLowerCase()}`}>{page}</a>
+              </li>
+            ))}
+            <li className="nav-item ms-2">
+              <a href="/booking" className="btn btn-success btn-sm px-3">Get Started</a>
+            </li>
+          </ul>
         </div>
-        <div className="col-md-6">
-          <h2>Why Choose Us?</h2>
-          <p>ASD ASD ASD ASD ASD ASD ASDA ASDASDAS DASDASDASDA DASD ASDASD ASDAS DASDASD ASDASDASDASD ADASD ADASD ASDASDAD ASD.</p>
-          <a href="/about" className="btn btn-primary">Learn More</a>
-        </div>
-      </div>
+      </nav>
 
-      <div className="row mb-6">
-        <div className="col-md-4 text-center">
-          <h3> Discord Community</h3>
-          <p>Join our  Discord community</p>
-        </div>
-
-        <div className="col-md-4">
-          <img
-            src="https://support.discord.com/hc/user_images/PRywUXcqg0v5DD6s7C3LyQ.jpeg"
-            alt="Discord Icon"
-            width="250"
-            height="250"
-
-          />
-          <a href="/joinNow" className="btn btn-primary">Join Now</a>
-        </div>
-      </div>
-
-
-      <h2 className="text-center mb-4">Our Teachers</h2>
-
-      <div className="row mb-5">
-        <div className="col-md-2 text-center">
-          <img
-            src="https://cdn.vectorstock.com/i/500p/98/38/gray-female-head-placeholder-vector-23519838.jpg"
-            alt="Teacher 1"
-            width="250"
-            height="250"
-          />
-          <h4 className="mt-3">Teacher 1</h4>
-          <p>asdasd asdasd asdasd asdasd asda sda asdasdad asdasdasd</p>
-        </div>
-
-        <div className="col-md-2 text-center">
-          <img
-            src="https://cdn.vectorstock.com/i/500p/98/38/gray-female-head-placeholder-vector-23519838.jpg"
-            alt="Teacher 2"
-            width="250"
-            height="250"
-          />
-          <h4 className="mt-3">Teacher 2</h4>
-          <p>asdasd asdasd asdasd asdasd asda sda asdasdad asdasdasd</p>
-        </div>
-
-        <div className="col-md-2 text-center">
-          <img
-            src="https://cdn.vectorstock.com/i/500p/98/38/gray-female-head-placeholder-vector-23519838.jpg"
-            alt="Teacher 3"
-            width="250"
-            height="250"
-          />
-          <h4 className="mt-3">Teacher 3</h4>
-          <p>asdasd asdasd asdasd asdasd asda sda asdasdad asdasdasd</p>
-        </div>
-
-        <div className="col-md-2 text-center">
-          <img
-            src="https://cdn.vectorstock.com/i/500p/98/38/gray-female-head-placeholder-vector-23519838.jpg"
-            alt="Teacher 4"
-            width="250"
-            height="250"
-          />
-          <h4 className="mt-3">Teacher 4</h4>
-          <p>asdasd asdasd asdasd asdasd asda sda asdasdad asdasdasd</p>
-        </div>
-
-        <div className="col-md-2 text-center">
-          <img
-            src="https://cdn.vectorstock.com/i/500p/98/38/gray-female-head-placeholder-vector-23519838.jpg"
-            alt="Teacher 5"
-            width="250"
-            height="250"
-          />
-          <h4 className="mt-3">Teacher 5</h4>
-          <p>asdasd asdasd asdasd asdasd asda sda asdasdad asdasdasd</p>
-        </div>
-      </div>
-      {/* FAQ Section*/}
-      <div className="row my-5">
-        <div className="col-12 text-center mb-4">
-          <h2 className="display-5">FAQ</h2>
-        </div>
-
-        {/* Accordion Container */}
-        <div className="col-lg-8 offset-lg-2"> {/* Centers the content on large screens */}
-          <div className="accordion" id="faqAccordion">
-
-            {/* FAQ Item 1 */}
-            <div className="accordion-item">
-              <h3 className="accordion-header" id="headingOne">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  Question 1?
-                </button>
-              </h3>
-              <div
-                id="collapseOne"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingOne"
-                data-bs-parent="#faqAccordion"
-              >
-                <div className="accordion-body">
-                  Answer 1.
-                </div>
-              </div>
+      {/* Hero */}
+      <div className="bg-light py-5 px-4">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-7">
+              <h1 className="display-4 fw-bold mb-3">Learn Japanese with Native Speakers</h1>
+              <p className="lead text-muted mb-4">
+                From beginner hiragana to business-level fluency — live lessons, flexible scheduling, real progress.
+              </p>
+              <a href="/booking" className="btn btn-success btn-lg me-3">Get Started Free</a>
+              <a href="/about" className="btn btn-outline-secondary btn-lg">Learn More</a>
             </div>
-
-            {/* FAQ Item 2 */}
-            <div className="accordion-item">
-              <h3 className="accordion-header" id="headingTwo">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Question 2?
-                </button>
-              </h3>
-              <div
-                id="collapseTwo"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#faqAccordion"
-              >
-                <div className="accordion-body">
-                  Answer 2.
-                </div>
-              </div>
-            </div>
-
-            {/* FAQ Item 3 */}
-            <div className="accordion-item">
-              <h3 className="accordion-header" id="headingThree">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  Question 2?
-                </button>
-              </h3>
-              <div
-                id="collapseThree"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#faqAccordion"
-              >
-                <div className="accordion-body">
-                  Answer 2.
-                </div>
-              </div>
+            <div className="col-lg-5 mt-4 mt-lg-0">
+              <Image
+                src="https://web-japan.org/kidsweb/explore/calendar/assets/img/april/schoolyear01.jpg"
+                alt="Student Learning Japanese"
+                width={500}
+                height={350}
+                className="img-fluid rounded shadow"
+              />
             </div>
           </div>
         </div>
       </div>
+
+      {/* Features */}
+      <div className="container py-5">
+        <div className="row text-center g-4">
+          {[
+            { icon: '🎌', title: 'Native Teachers', desc: 'Learn from certified native Japanese speakers.' },
+            { icon: '📅', title: 'Flexible Scheduling', desc: 'Book lessons that fit your timezone and routine.' },
+            { icon: '💬', title: 'Discord Community', desc: 'Practice daily with fellow learners.' },
+          ].map(f => (
+            <div key={f.title} className="col-md-4">
+              <div className="card h-100 border-0 shadow-sm p-4">
+                <div className="fs-1 mb-3">{f.icon}</div>
+                <h5 className="fw-semibold">{f.title}</h5>
+                <p className="text-muted mb-0">{f.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Discord CTA */}
+      <div className="bg-primary text-white py-5">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-2 text-center mb-3 mb-md-0">
+              <Image
+                src="https://support.discord.com/hc/user_images/PRywUXcqg0v5DD6s7C3LyQ.jpeg"
+                alt="Discord"
+                width={80}
+                height={80}
+                className="rounded"
+              />
+            </div>
+            <div className="col-md-7">
+              <h3 className="fw-bold mb-1">Join our Discord Community</h3>
+              <p className="mb-0 opacity-75">Connect with learners, get homework help, and practice 24/7.</p>
+            </div>
+            <div className="col-md-3 text-md-end mt-3 mt-md-0">
+              <a href="/joinNow" className="btn btn-light btn-lg fw-semibold">Join Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Teachers */}
+      <div className="container py-5">
+        <h2 className="text-center fw-bold mb-5">Meet Our Teachers</h2>
+        <div className="row justify-content-center g-4">
+          {teachers.map(t => (
+            <div key={t.id} className="col-6 col-md-4 col-lg-2 text-center">
+              <Image
+                src="https://cdn.vectorstock.com/i/500p/98/38/gray-female-head-placeholder-vector-23519838.jpg"
+                alt={t.name}
+                width={120}
+                height={120}
+                className="rounded-circle shadow mb-3"
+              />
+              <h6 className="fw-semibold mb-1">{t.name}</h6>
+              <p className="text-muted small">{t.bio}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* FAQ */}
+      <div className="bg-light py-5">
+        <div className="container">
+          <h2 className="text-center fw-bold mb-5">Frequently Asked Questions</h2>
+          <div className="accordion col-lg-8 mx-auto" id="faqAccordion">
+            {[
+              { id: 'one', q: 'Do I need any prior Japanese knowledge?', a: 'Not at all — we welcome complete beginners and tailor lessons to your level.' },
+              { id: 'two', q: 'How long are the lessons?', a: 'Standard lessons are 50 minutes, but we offer 25-minute sessions as well.' },
+              { id: 'three', q: 'Can I switch teachers?', a: 'Yes, you can try different teachers and switch at any time.' },
+            ].map(({ id, q, a }) => (
+              <div key={id} className="accordion-item border-0 mb-2 shadow-sm rounded overflow-hidden">
+                <h3 className="accordion-header">
+                  <button
+                    className="accordion-button collapsed fw-medium"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#collapse-${id}`}
+                    aria-expanded="false"
+                  >
+                    {q}
+                  </button>
+                </h3>
+                <div id={`collapse-${id}`} className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div className="accordion-body text-muted">{a}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="text-center text-muted py-4 border-top small">
+        © {new Date().getFullYear()} Japanese School. All rights reserved.
+      </footer>
 
     </div>
   );
