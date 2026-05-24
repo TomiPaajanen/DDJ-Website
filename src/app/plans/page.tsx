@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 const plans = [
   {
@@ -51,14 +50,9 @@ export default function Plans() {
 
       {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm px-4 py-3">
-        <Link href="/" className="navbar-brand">
-          <Image
-            src="/logo.png"
-            alt="Company Logo"
-            height={40}
-            width={120}
-            className="d-inline-block"
-          />
+        <Link href="/" className="navbar-brand d-flex flex-column" style={{ fontFamily: 'var(--font-kaisei-decol)', color: '#b85c2a', fontSize: '1.2rem', fontWeight: 700 }}>
+          <span>Daily Dose Japanese</span>
+          <span style={{ fontSize: '0.6rem', fontWeight: 400 }}>Online Japanese School</span>
         </Link>
         <div className="ms-auto">
           <ul className="nav gap-1">
@@ -76,10 +70,10 @@ export default function Plans() {
                 href="https://calendly.com/daily_dose_japanese/roadmap_session"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-sm px-3 text-white"
-                style={{ background: ACCENT }}
+                className="btn btn-sm px-3 fw-bold"
+                style={{ background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', borderRadius: 50, border: 'none' }}
               >
-                Get Started
+                Book My Free Session
               </a>
             </li>
           </ul>
@@ -172,15 +166,15 @@ export default function Plans() {
                   href="https://calendly.com/daily_dose_japanese/roadmap_session"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn w-100 fw-semibold py-2"
+                  className="btn w-100 fw-bold py-2"
                   style={
                     plan.highlight
-                      ? { background: ACCENT, color: '#fff', border: 'none', borderRadius: 8 }
-                      : { background: 'transparent', color: ACCENT, border: `2px solid ${ACCENT}`, borderRadius: 8 }
+                      ? { background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', border: 'none', borderRadius: 50 }
+                      : { background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', border: 'none', borderRadius: 50 }
                   }
                   onMouseEnter={undefined}
                 >
-                  Book a free call
+                  Book My Free Session
                 </a>
               </div>
             </div>

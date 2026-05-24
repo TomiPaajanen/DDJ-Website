@@ -17,17 +17,12 @@ export default function Home() {
     <div className="container-fluid px-0">
 
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm px-4 py-3">
-        <Link href="/" className="navbar-brand">
-          <Image
-            src="/logo.png"
-            alt="Company Logo"
-            height={40}
-            width={120}
-            className="d-inline-block"
-          />
+      <nav className="navbar navbar-expand-lg navbar-light border-bottom shadow-sm px-4 py-3" style={{ background: '#f5ede0' }}>
+        <Link href="/" className="navbar-brand d-flex flex-column" style={{ fontFamily: 'var(--font-kaisei-decol)', color: '#b85c2a', fontSize: '1.1rem', fontWeight: 700 }}>
+          <span>Daily Dose Japanese</span>
+          <span style={{ fontSize: '0.8rem', fontWeight: 400 }}>Online Japanese School</span>
         </Link>
-        <div className="ms-auto">
+        <div className="ms-auto" >
           <ul className="nav gap-1">
             <li className="nav-item">
               <a className="nav-link fw-medium text-dark" href="/plans">Plans</a>
@@ -36,31 +31,33 @@ export default function Home() {
               <a className="nav-link fw-medium text-dark" href="#faq">FAQ</a>
             </li>
             <li className="nav-item ms-2">
-              <a href="https://calendly.com/daily_dose_japanese/roadmap_session" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-sm px-3">Get Started</a>
+              <a href="https://calendly.com/daily_dose_japanese/roadmap_session" target="_blank" rel="noopener noreferrer" className="btn btn-sm px-3 fw-bold" style={{ background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', borderRadius: 50, border: 'none' }}>Book My Free Session</a>
             </li>
           </ul>
         </div>
       </nav>
 
       {/* Hero */}
-      <div className="bg-light py-5 px-4">
-        <div className="container">
-          <div className="row align-items-center">
+      <div className="py-5 px-4" style={{ background: '#fbf7f0' }}>
+        <div className="container" >
+          <div className="row align-items-center" >
             <div className="col-lg-7">
-              <h1 className="display-4 fw-bold mb-3" style={{ color: '#b85c2a' }}>Learn Japanese with Native Speakers</h1>
+              <h1 className="display-4 fw-bold mb-3" style={{ color: '#b85c2a' }}>Ready to actually SPEAK Japanese?</h1>
               <p className="lead mb-4" style={{ color: '#000' }}>
-                From beginner hiragana to business-level fluency — live lessons, flexible scheduling, real progress.
+                Most learners get stuck with apps and textbooks.<br />
+                At DDJ, you&apos;ll have real conversations with native<br />
+                teachers — personalized to your goals and lifestyle.
               </p>
-              <a href="https://calendly.com/daily_dose_japanese/roadmap_session" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-lg me-3">Get Started Free</a>
-              <a href="/plans" className="btn btn-outline-secondary btn-lg">Learn More</a>
+              <a href="https://calendly.com/daily_dose_japanese/roadmap_session" target="_blank" rel="noopener noreferrer" className="btn btn-lg fw-bold" style={{ background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', borderRadius: 50, border: 'none' }}>Book My Free Session</a>
             </div>
             <div className="col-lg-5 mt-4 mt-lg-0">
               <Image
-                src="/main.png"
+                src="/main1.png"
                 alt="Student Learning Japanese"
-                width={250}
-                height={175}
+                width={500}
+                height={280}
                 className="img-fluid rounded shadow"
+                style={{ width: '100%', height: 'auto', }}
               />
             </div>
           </div>
@@ -72,15 +69,15 @@ export default function Home() {
         <div className="container py-5">
           <div className="row text-center g-4">
             {[
-              { icon: '🎌', title: 'Native Teachers', desc: 'Learn from certified native Japanese speakers.' },
-              { icon: '📅', title: 'Flexible Scheduling', desc: 'Book lessons that fit your timezone and routine.' },
-              { icon: '💬', title: 'Discord Community', desc: 'Practice daily with fellow learners.' },
+              { icon: '👩‍🏫', title: 'Team of Senseis', desc: 'A team supports your journey — switch or add teachers as you grow.' },
+              { icon: '✨', title: 'Personalized Plan', desc: 'Lessons match your goals & lifestyle' },
+              { icon: '📅', title: '3-Month Counseling', desc: 'Regular check-ins to keep you on track' },
             ].map(f => (
               <div key={f.title} className="col-md-4">
-                <div className="card h-100 border-0 shadow-sm p-4">
+                <div className="card h-100 border-0 shadow-sm p-4 bg-white">
                   <div className="fs-1 mb-3">{f.icon}</div>
-                  <h5 className="fw-semibold">{f.title}</h5>
-                  <p className="text-muted mb-0">{f.desc}</p>
+                  <h5 className="fw-semibold" style={{ color: '#aa8b57' }}>{f.title}</h5>
+                  <p className="mb-0" style={{ color: '#b85c2a' }}>{f.desc}</p>
                 </div>
               </div>
             ))}
@@ -129,7 +126,7 @@ export default function Home() {
       </div>
 
       {/* Free Session CTA */}
-      <div className="py-5" style={{ background: '#FDF9F0', borderTop: '1px solid #f0e0cc', borderBottom: '1px solid #f0e0cc' }}>
+      <div className="py-5" style={{ background: '#fbf7f0', borderTop: '1px solid #f0e0cc', borderBottom: '1px solid #f0e0cc' }}>
         <div className="container">
 
           {/* Desktop: two columns | Mobile: centered stack */}
@@ -148,7 +145,7 @@ export default function Home() {
               <div className="mt-auto">
                 <p className="mb-1" style={{ color: '#4D4A42', fontSize: '1rem' }}>Book a free 25-min call.</p>
                 <p className="mb-1" style={{ color: '#4D4A42', fontSize: '1rem' }}>We&apos;ll understand your goals, your level, and match you with the right teacher</p>
-                <p className="mb-0" style={{ color: '#4D4A42', fontSize: '0.9rem' }}>Spots open 20th–30th</p>
+                <p className="mb-0" style={{ color: '#4D4A42', fontSize: '0.9rem' }}>🔥 Only 10 free counseling spots open every month (20th–30th)</p>
               </div>
             </div>
             {/* Button */}
@@ -167,7 +164,7 @@ export default function Home() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                Book Your Free Call &nbsp;▶
+                Book My Free Session &nbsp;▶
               </a>
             </div>
           </div>
@@ -193,7 +190,7 @@ export default function Home() {
             >
               Book Your Free Call &nbsp;▶
             </a>
-            <p className="mt-3 mb-0" style={{ color: '#4D4A42', fontSize: '0.9rem' }}>Spots open 20th–30th</p>
+            <p className="mt-3 mb-0" style={{ color: '#4D4A42', fontSize: '0.9rem' }}>🔥 Only 10 free counseling spots open every month (20th–30th)</p>
           </div>
 
         </div>
@@ -239,7 +236,7 @@ export default function Home() {
       </div>
 
       {/* FAQ */}
-      <div id="faq" className="bg-light py-5">
+      <div id="faq" className="py-5" style={{ background: '#fbf7f0' }}>
         <div className="container">
           <h2 className="text-center fw-bold mb-5" style={{ color: '#b85c2a' }}>Frequently Asked Questions</h2>
           <FaqAccordion />
