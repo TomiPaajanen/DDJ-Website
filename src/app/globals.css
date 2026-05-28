@@ -32,3 +32,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+a .card {
+  transition: transform 0.2s ease;
+}
+
+a:hover .card {
+  transform: translateY(-4px);
+}

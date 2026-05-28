@@ -76,7 +76,7 @@ export default function Home() {
               <div key={f.title} className="col-md-4">
                 {f.link ? (
                   <Link href={f.link} className="text-decoration-none">
-                    <div className="card h-100 border-0 shadow-sm p-4 bg-white" style={{ cursor: 'pointer', transition: 'transform 0.2s', height: '100%' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                    <div className="card h-100 border-0 shadow-sm p-4 bg-white" style={{ cursor: 'pointer', transition: 'transform 0.2s', height: '100%' }}>
                       <div className="fs-1 mb-3">{f.icon}</div>
                       <h5 className="fw-semibold" style={{ color: '#aa8b57' }}>{f.title}</h5>
                       <p className="mb-0" style={{ color: '#b85c2a' }}>{f.desc}</p>
