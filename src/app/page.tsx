@@ -17,17 +17,17 @@ export default function Home() {
     <div className="container-fluid px-0">
 
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light border-bottom shadow-sm px-4 py-3" style={{ background: '#f5ede0' }}>
+      <nav className="navbar navbar-expand-lg navbar-light border-bottom shadow-sm px-4" style={{ background: '#f5ede0', paddingTop: '0.75rem', paddingBottom: '0.75rem' }}>
         <Link href="/" className="navbar-brand d-flex flex-column" style={{ fontFamily: 'var(--font-kaisei-decol)', color: '#b85c2a', fontSize: '1.1rem', fontWeight: 700 }}>
           <span>Daily Dose Japanese</span>
           <span style={{ fontSize: '0.8rem', fontWeight: 400 }}>Online Japanese School</span>
         </Link>
         <div className="ms-auto" >
           <ul className="nav gap-1">
-            <li className="nav-item">
+            <li className="nav-item d-none d-md-block">
               <a className="nav-link fw-medium text-dark" href="/plans">Plans</a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item d-none d-md-block">
               <a className="nav-link fw-medium text-dark" href="#faq">FAQ</a>
             </li>
             <li className="nav-item ms-2">
@@ -52,7 +52,7 @@ export default function Home() {
             </div>
             <div className="col-lg-5 mt-4 mt-lg-0">
               <Image
-                src="/main1.png"
+                src="/lesson.png"
                 alt="Student Learning Japanese"
                 width={500}
                 height={280}
@@ -225,9 +225,11 @@ export default function Home() {
                     {t.firstName} <span style={{ fontWeight: 400, fontSize: '0.85rem' }}>sensei</span>
                   </p>
                   <p className="mb-1 small text-muted">in {t.location}</p>
-                  {t.desc.map((line, j) => (
-                    <p key={j} className="mb-0" style={{ color: '#4a3728', fontSize: '0.8rem' }}>{line}</p>
-                  ))}
+                  <div className="d-none d-md-block">
+                    {t.desc.map((line, j) => (
+                      <p key={j} className="mb-0" style={{ color: '#4a3728', fontSize: '0.8rem' }}>{line}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

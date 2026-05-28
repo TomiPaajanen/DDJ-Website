@@ -46,7 +46,7 @@ export default function Privacy() {
 
             <h4 style={{ color: '#b85c2a', marginTop: '2rem' }}>1. Information We Collect</h4>
             <p>
-              When you book a free consultation through Calendly, you provide us with your name, email address, and possibly your phone number and timezone. This information is collected by Calendly (our scheduling partner) and shared with us so we can contact you and schedule your lesson.
+              When you book a free consultation through Calendly, you provide us with your name, email address, and timezone. This information is collected by Calendly (our scheduling partner) and shared with us so we can contact you and schedule your lesson.
             </p>
 
             <h4 style={{ color: '#b85c2a', marginTop: '2rem' }}>2. How We Use Your Information</h4>
@@ -69,7 +69,7 @@ export default function Privacy() {
 
             <h4 style={{ color: '#b85c2a', marginTop: '2rem' }}>4. Your Rights (GDPR)</h4>
             <p>
-              If you're located in the EU, you have the right to access, correct, or delete your personal data. To exercise these rights, please contact us at <strong>contact@dailydosejapanese.com</strong>.
+              If you're located in the EU, you have the right to access, correct, or delete your personal data. To exercise these rights, please contact us at <strong>dailydosejapanese@gmail.com</strong>.
             </p>
 
             <h4 style={{ color: '#b85c2a', marginTop: '2rem' }}>5. Calendly's Privacy</h4>
@@ -83,7 +83,7 @@ export default function Privacy() {
 
             <h4 style={{ color: '#b85c2a', marginTop: '2rem' }}>6. Contact</h4>
             <p>
-              If you have questions about this Privacy Policy, contact us at <strong>contact@dailydosejapanese.com</strong>.
+              If you have questions about this Privacy Policy, contact us at <strong>dailydosejapanese@gmail.com</strong>.
             </p>
           </div>
         </div>

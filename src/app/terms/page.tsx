@@ -95,7 +95,7 @@ export default function Terms() {
 
             <h4 style={{ color: '#b85c2a', marginTop: '2rem' }}>9. Contact</h4>
             <p>
-              If you have questions about these Terms of Service, contact us at <strong>contact@dailydosejapanese.com</strong>.
+              If you have questions about these Terms of Service, contact us at <strong>dailydosejapanese@gmail.com</strong>.
             </p>
           </div>
         </div>
