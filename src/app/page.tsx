@@ -69,16 +69,26 @@ export default function Home() {
         <div className="container py-5">
           <div className="row text-center g-4">
             {[
-              { icon: '👩‍🏫', title: 'Team of Senseis', desc: 'A team supports your journey — switch or add teachers as you grow.' },
-              { icon: '✨', title: 'Personalized Plan', desc: 'Lessons match your goals & lifestyle' },
-              { icon: '📅', title: '3-Month Counseling', desc: 'Regular check-ins to keep you on track' },
+              { icon: '👩‍🏫', title: 'Team of Senseis', desc: 'A team supports your journey — switch or add teachers as you grow.', link: null },
+              { icon: '✨', title: 'Personalized Plan', desc: 'Lessons match your goals & lifestyle', link: '/plans' },
+              { icon: '📅', title: '3-Month Counseling', desc: 'Regular check-ins to keep you on track', link: null },
             ].map(f => (
               <div key={f.title} className="col-md-4">
-                <div className="card h-100 border-0 shadow-sm p-4 bg-white">
-                  <div className="fs-1 mb-3">{f.icon}</div>
-                  <h5 className="fw-semibold" style={{ color: '#aa8b57' }}>{f.title}</h5>
-                  <p className="mb-0" style={{ color: '#b85c2a' }}>{f.desc}</p>
-                </div>
+                {f.link ? (
+                  <Link href={f.link} className="text-decoration-none">
+                    <div className="card h-100 border-0 shadow-sm p-4 bg-white" style={{ cursor: 'pointer', transition: 'transform 0.2s', height: '100%' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                      <div className="fs-1 mb-3">{f.icon}</div>
+                      <h5 className="fw-semibold" style={{ color: '#aa8b57' }}>{f.title}</h5>
+                      <p className="mb-0" style={{ color: '#b85c2a' }}>{f.desc}</p>
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="card h-100 border-0 shadow-sm p-4 bg-white">
+                    <div className="fs-1 mb-3">{f.icon}</div>
+                    <h5 className="fw-semibold" style={{ color: '#aa8b57' }}>{f.title}</h5>
+                    <p className="mb-0" style={{ color: '#b85c2a' }}>{f.desc}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
