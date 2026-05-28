@@ -198,6 +198,10 @@ export default function Plans() {
 
       {/* Footer */}
       <footer className="text-center py-4 border-top small" style={{ color: '#9a7a68', borderColor: '#e0d0c0 !important' }}>
+        <div className="mb-2">
+          <Link href="/privacy" className="text-decoration-none mx-2" style={{ color: '#9a7a68' }}>Privacy Policy</Link>
+          <Link href="/terms" className="text-decoration-none mx-2" style={{ color: '#9a7a68' }}>Terms of Service</Link>
+        </div>
         © {new Date().getFullYear()} Daily Dose Japanese. All rights reserved.
       </footer>
 

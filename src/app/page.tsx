@@ -245,7 +245,11 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="text-center text-muted py-4 border-top small">
-        © {new Date().getFullYear()} Japanese School. All rights reserved.
+        <div className="mb-2">
+          <Link href="/privacy" className="text-muted text-decoration-none mx-2">Privacy Policy</Link>
+          <Link href="/terms" className="text-muted text-decoration-none mx-2">Terms of Service</Link>
+        </div>
+        © {new Date().getFullYear()} Daily Dose Japanese. All rights reserved.
       </footer>
 
     </div>
