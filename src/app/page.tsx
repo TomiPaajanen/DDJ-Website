@@ -30,7 +30,7 @@ export default function Home() {
             <li className="nav-item d-none d-md-block">
               <a className="nav-link fw-medium text-dark" href="#faq">FAQ</a>
             </li>
-            <li className="nav-item ms-2">
+            <li className="nav-item ms-2 d-none d-md-block">
               <a href="https://calendly.com/daily_dose_japanese/roadmap_session" target="_blank" rel="noopener noreferrer" className="btn btn-sm px-3 fw-bold" style={{ background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', borderRadius: 50, border: 'none' }}>Book My Free Session</a>
             </li>
           </ul>
@@ -44,11 +44,9 @@ export default function Home() {
             <div className="col-lg-7">
               <h1 className="display-4 fw-bold mb-3" style={{ color: '#b85c2a' }}>Ready to actually SPEAK Japanese?</h1>
               <p className="lead mb-4" style={{ color: '#000' }}>
-                Most learners get stuck with apps and textbooks.<br />
-                At DDJ, you&apos;ll have real conversations with native<br />
-                teachers — personalized to your goals and lifestyle.
+                Most learners get stuck with apps and textbooks. At DDJ, you&apos;ll have real conversations with native teachers — personalized to your goals and lifestyle.
               </p>
-              <a href="https://calendly.com/daily_dose_japanese/roadmap_session" target="_blank" rel="noopener noreferrer" className="btn btn-lg fw-bold" style={{ background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', borderRadius: 50, border: 'none' }}>Book My Free Session</a>
+              <Link href="/plans" className="btn btn-lg fw-bold" style={{ background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', borderRadius: 50, border: 'none' }}>View Plans</Link>
             </div>
             <div className="col-lg-5 mt-4 mt-lg-0">
               <Image

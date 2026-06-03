@@ -62,10 +62,10 @@ export default function Plans() {
             <li className="nav-item">
               <Link className="nav-link fw-medium text-dark" href="/plans" style={{ color: ACCENT }}>Plans</Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item d-none d-md-block">
               <Link className="nav-link fw-medium text-dark" href="/#faq">FAQ</Link>
             </li>
-            <li className="nav-item ms-2">
+            <li className="nav-item ms-2 d-none d-md-block">
               <a
                 href="https://calendly.com/daily_dose_japanese/roadmap_session"
                 target="_blank"
