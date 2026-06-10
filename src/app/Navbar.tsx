@@ -23,7 +23,7 @@ export default function Navbar({
 
   const linkClass = 'nav-link fw-medium text-dark';
   const buttonStyle = {
-    background: 'linear-gradient(to right, #b85c2a, #f3c789)',
+    background: '#b85c2a',
     color: '#fff',
     borderRadius: 8,
     border: 'none',

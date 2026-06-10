@@ -24,11 +24,24 @@ export default function Home() {
         <div className="container" >
           <div className="row align-items-center" >
             <div className="col-lg-7">
-              <h1 className="display-4 fw-bold mb-3" style={{ color: '#b85c2a' }}>Ready to actually SPEAK Japanese?</h1>
+              <h1 className="display-4 fw-bold mb-3" style={{ color: '#2a1a0e' }}>
+                Ready to actually <em style={{ color: '#b85c2a', fontStyle: 'italic' }}>speak</em> Japanese?
+              </h1>
               <p className="lead mb-4" style={{ color: '#000' }}>
                 Most learners get stuck with apps and textbooks. At DDJ, you&apos;ll have real conversations with native teachers — personalized to your goals and lifestyle.
               </p>
-              <Link href="/plans" className="btn btn-lg fw-bold" style={{ background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', borderRadius: 50, border: 'none' }}>View Plans</Link>
+              <a
+                href="https://calendly.com/daily_dose_japanese/roadmap_session"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-lg fw-bold"
+                style={{ background: '#b85c2a', color: '#fff', borderRadius: 8, border: 'none' }}
+              >
+                Book my free session →
+              </a>
+              <p className="mt-2 mb-0" style={{ color: '#7a6a5c', fontSize: '0.9rem' }}>
+                25 min · Free · No commitment
+              </p>
             </div>
             <div className="col-lg-5 mt-4 mt-lg-0">
               <Image
