@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image';
 import FaqAccordion from './FaqAccordion';
+import Navbar from './Navbar';
 
 const teachers = [
   { firstName: 'Yuki',   image: 'yuki.png',   location: 'Canada', desc: ['5 years teaching experience', 'structured lessons'] },
@@ -16,26 +17,7 @@ export default function Home() {
   return (
     <div className="container-fluid px-0">
 
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light border-bottom shadow-sm px-4" style={{ background: '#f5ede0', paddingTop: '0.75rem', paddingBottom: '0.75rem' }}>
-        <Link href="/" className="navbar-brand d-flex flex-column" style={{ fontFamily: 'var(--font-kaisei-decol)', color: '#b85c2a', fontSize: '1.1rem', fontWeight: 700 }}>
-          <span>Daily Dose Japanese</span>
-          <span style={{ fontSize: '0.8rem', fontWeight: 400 }}>Online Japanese School</span>
-        </Link>
-        <div className="ms-auto" >
-          <ul className="nav gap-1">
-            <li className="nav-item d-none d-md-block">
-              <a className="nav-link fw-medium text-dark" href="/plans">Plans</a>
-            </li>
-            <li className="nav-item d-none d-md-block">
-              <a className="nav-link fw-medium text-dark" href="#faq">FAQ</a>
-            </li>
-            <li className="nav-item ms-2 d-none d-md-block">
-              <a href="https://calendly.com/daily_dose_japanese/roadmap_session" target="_blank" rel="noopener noreferrer" className="btn btn-sm px-3 fw-bold" style={{ background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', borderRadius: 50, border: 'none' }}>Book My Free Session</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <div className="py-5 px-4" style={{ background: '#fbf7f0' }}>
