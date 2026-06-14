@@ -58,32 +58,52 @@ export default function Home() {
       </div>
 
       {/* Features */}
-      <div style={{ background: '#b85c2a' }}>
+      <div style={{ background: '#ffffff' }}>
         <div className="container py-5">
-          <div className="row text-center g-4">
+          <div className="text-center mb-5">
+            <p className="mb-2 fw-semibold" style={{ color: '#b85c2a', letterSpacing: '0.15em', fontSize: '0.85rem' }}>
+              WHAT MAKES US DIFFERENT
+            </p>
+            <h2 className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem' }}>
+              The DDJ way of learning
+            </h2>
+          </div>
+          <div className="row g-4">
             {[
-              { icon: '👩‍🏫', title: 'Team of Senseis', desc: 'A team supports your journey — switch or add teachers as you grow.', link: null },
-              { icon: '✨', title: 'Personalized Plan', desc: 'Lessons match your goals & lifestyle', link: '/plans' },
-              { icon: '📅', title: '3-Month Counseling', desc: 'Regular check-ins to keep you on track', link: null },
+              { icon: '✨', title: 'Personalized lessons', desc: 'Tailored to your goals and lifestyle' },
+              { icon: '👩‍🏫', title: 'Team of senseis', desc: 'Learn from multiple teachers as you grow' },
+              { icon: 'discord', title: 'Discord community', desc: 'Practice 24/7 with peers' },
+              { icon: '📅', title: 'Flexible scheduling', desc: 'Fits any timezone or routine' },
             ].map(f => (
-              <div key={f.title} className="col-md-4">
-                {f.link ? (
-                  <Link href={f.link} className="text-decoration-none">
-                    <div className="card h-100 border-0 shadow-sm p-4 bg-white" style={{ cursor: 'pointer', transition: 'transform 0.2s', height: '100%' }}>
-                      <div className="fs-1 mb-3">{f.icon}</div>
-                      <h5 className="fw-semibold" style={{ color: '#aa8b57' }}>{f.title}</h5>
-                      <p className="mb-0" style={{ color: '#b85c2a' }}>{f.desc}</p>
-                    </div>
-                  </Link>
-                ) : (
-                  <div className="card h-100 border-0 shadow-sm p-4 bg-white">
-                    <div className="fs-1 mb-3">{f.icon}</div>
-                    <h5 className="fw-semibold" style={{ color: '#aa8b57' }}>{f.title}</h5>
-                    <p className="mb-0" style={{ color: '#b85c2a' }}>{f.desc}</p>
+              <div key={f.title} className="col-md-6">
+                <div className="p-4 h-100" style={{ background: '#fbe9dc', borderRadius: 16 }}>
+                  <div className="mb-3" style={{ fontSize: '2rem' }}>
+                    {f.icon === 'discord' ? (
+                      <Image src="/discord_logo.png" alt="Discord" width={40} height={40} style={{ objectFit: 'contain' }} />
+                    ) : (
+                      f.icon
+                    )}
                   </div>
-                )}
+                  <h5 className="fw-bold mb-2" style={{ color: '#2a1a0e' }}>{f.title}</h5>
+                  <p className="mb-0" style={{ color: '#4a3728' }}>{f.desc}</p>
+                </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-5">
+            <p className="mb-3" style={{ color: '#4a3728' }}>Wondering if this fits your goals?</p>
+            <Link
+              href="/information"
+              className="btn fw-semibold px-4 py-2"
+              style={{
+                background: 'transparent',
+                color: '#b85c2a',
+                border: '1.5px solid #b85c2a',
+                borderRadius: 8,
+              }}
+            >
+              See if DDJ fits you →
+            </Link>
           </div>
         </div>
       </div>
