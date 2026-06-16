@@ -184,7 +184,7 @@ export default function Home() {
       </div>
 
       {/* Video + Student Reviews */}
-      <div className="py-5" style={{ background: '#f5ede0' }}>
+      <div className="py-5" style={{ background: '#ffffff' }}>
         <div className="container">
 
           {/* Title */}
@@ -221,7 +221,7 @@ export default function Home() {
       </div>
 
       {/* Teachers */}
-      <div id="teachers" className="py-5" style={{ background: '#f5ede0' }}>
+      <div id="teachers" className="py-5" style={{ background: '#fbf7f0' }}>
         <div className="container">
           <h2 className="text-center fw-bold mb-5" style={{ color: '#b85c2a' }}>Meet Our Teachers</h2>
           <div className="row row-cols-3 row-cols-md-5 g-4 justify-content-center">
@@ -265,7 +265,7 @@ export default function Home() {
       </div>
 
       {/* FAQ */}
-      <div id="faq" className="py-5" style={{ background: '#fbf7f0' }}>
+      <div id="faq" className="py-5" style={{ background: '#ffffff' }}>
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem' }}>
