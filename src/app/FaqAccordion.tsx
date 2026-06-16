@@ -17,17 +17,17 @@ export default function FaqAccordion() {
   return (
     <div className="col-lg-8 mx-auto">
       {items.map(({ q, a }, i) => (
-        <div key={i} className="mb-2 shadow-sm rounded overflow-hidden border-0">
+        <div key={i} className="mb-3 overflow-hidden" style={{ background: '#f7f1e8', borderRadius: 12 }}>
           <button
-            className="w-100 text-start px-4 py-3 fw-medium border-0 d-flex justify-content-between align-items-center"
-            style={{ background: '#fff', cursor: 'pointer', color: '#000' }}
+            className="w-100 text-start px-4 py-3 fw-bold border-0 d-flex justify-content-between align-items-center gap-3"
+            style={{ background: '#f7f1e8', cursor: 'pointer', color: '#3a2010' }}
             onClick={() => setOpen(open === i ? null : i)}
           >
             <span>{q}</span>
-            <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>{open === i ? '−' : '+'}</span>
+            <span style={{ fontSize: '1.5rem', lineHeight: 1, color: '#b85c2a', flexShrink: 0 }}>{open === i ? '−' : '+'}</span>
           </button>
           {open === i && (
-            <div className="px-4 py-3 text-muted" style={{ background: '#fff', borderTop: '1px solid #eee' }}>
+            <div className="px-4 pb-3" style={{ background: '#f7f1e8', color: '#6a5648', fontSize: '0.95rem', lineHeight: 1.6 }}>
               {a}
             </div>
           )}

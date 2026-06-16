@@ -265,7 +265,11 @@ export default function Home() {
       {/* FAQ */}
       <div id="faq" className="py-5" style={{ background: '#fbf7f0' }}>
         <div className="container">
-          <h2 className="text-center fw-bold mb-5" style={{ color: '#b85c2a' }}>Frequently Asked Questions</h2>
+          <div className="text-center mb-5">
+            <h2 className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem' }}>
+              FAQ
+            </h2>
+          </div>
           <FaqAccordion />
         </div>
       </div>
