@@ -93,7 +93,7 @@ export default function Home() {
           <div className="text-center mt-5">
             <p className="mb-3" style={{ color: '#4a3728' }}>Wondering if this fits your goals?</p>
             <Link
-              href="/information"
+              href="/plans"
               className="btn fw-semibold px-4 py-2"
               style={{
                 background: 'transparent',
@@ -221,7 +221,7 @@ export default function Home() {
       </div>
 
       {/* Teachers */}
-      <div className="py-5" style={{ background: '#f5ede0' }}>
+      <div id="teachers" className="py-5" style={{ background: '#f5ede0' }}>
         <div className="container">
           <h2 className="text-center fw-bold mb-5" style={{ color: '#b85c2a' }}>Meet Our Teachers</h2>
           <div className="row row-cols-3 row-cols-md-5 g-4 justify-content-center">
@@ -251,13 +251,15 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-5">
-            <Link
-              href="/teachers"
+            <a
+              href="https://canva.link/2u6i9e0sw66c6q4"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn fw-bold px-4 py-2"
               style={{ background: '#b85c2a', color: '#fff', border: 'none', borderRadius: 8 }}
             >
               More about teachers →
-            </Link>
+            </a>
           </div>
         </div>
       </div>
