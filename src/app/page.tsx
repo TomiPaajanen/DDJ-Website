@@ -6,7 +6,6 @@ import ReviewsCarousel from './ReviewsCarousel';
 
 const teachers = [
   { firstName: 'Yuki',   image: 'yuki.png',   location: 'Canada', desc: ['5 years teaching experience', 'structured lessons'] },
-  { firstName: 'Suzu',   image: 'suzu.png',   location: 'Japan',  desc: ['teaching experience in AUS', 'beginners to exam prep'] },
   { firstName: 'Nanaka', image: 'nanaka.png', location: 'Japan',  desc: ['fun and motivating', 'student-centered lessons'] },
   { firstName: 'Riko',   image: 'riko.png',   location: 'Japan',  desc: ['casual conversations', 'focus on fun speaking practice'] },
   { firstName: 'Airi',   image: 'airi.png',   location: 'Japan',  desc: ['relaxed environment', 'natural conversations'] },
