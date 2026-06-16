@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image';
 import FaqAccordion from './FaqAccordion';
 import Navbar from './Navbar';
+import ReviewsCarousel from './ReviewsCarousel';
 
 const teachers = [
   { firstName: 'Yuki',   image: 'yuki.png',   location: 'Canada', desc: ['5 years teaching experience', 'structured lessons'] },
@@ -75,7 +76,7 @@ export default function Home() {
               { icon: 'discord', title: 'Discord community', desc: 'Practice 24/7 with peers' },
               { icon: '📅', title: 'Flexible scheduling', desc: 'Fits any timezone or routine' },
             ].map(f => (
-              <div key={f.title} className="col-md-6">
+              <div key={f.title} className="col-6 col-lg-3">
                 <div className="p-4 h-100" style={{ background: '#fbe9dc', borderRadius: 16 }}>
                   <div className="mb-3" style={{ fontSize: '2rem' }}>
                     {f.icon === 'discord' ? (
@@ -108,10 +109,96 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Why Choose DDJ Comparison */}
+      <div style={{ background: '#fbf7f0' }}>
+        <div className="container py-5">
+          <div className="text-center mb-5">
+            <p className="mb-2 fw-semibold" style={{ color: '#b85c2a', letterSpacing: '0.15em', fontSize: '0.85rem' }}>
+              WHY CHOOSE DDJ
+            </p>
+            <h2 className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem' }}>
+              Not your typical Japanese school
+            </h2>
+          </div>
+
+          <div className="row g-4 justify-content-center" style={{ maxWidth: 900, margin: '0 auto' }}>
+            {/* Other schools */}
+            <div className="col-md-6">
+              <div className="d-flex flex-column h-100 p-4 bg-white" style={{ borderRadius: 16, border: '1px solid #e8ded2' }}>
+                <div className="mb-2" style={{ fontSize: '1rem', visibility: 'hidden' }}>⭐⭐⭐⭐⭐</div>
+                <span className="align-self-start px-3 py-1 mb-4" style={{ background: '#f0e6da', color: '#7a6a5c', borderRadius: 20, fontSize: '0.85rem' }}>
+                  Other schools
+                </span>
+                <ul className="list-unstyled flex-grow-1 mb-4">
+                  {['Passive learning', 'Fixed curriculum', 'One-way lectures', 'Learn alone'].map(item => (
+                    <li key={item} className="d-flex align-items-center gap-2 mb-3" style={{ color: '#4a3728' }}>
+                      <span style={{ display: 'inline-block', width: 18, height: 18, border: '1.5px solid #c0b3a3', borderRadius: 4 }}></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <hr style={{ borderColor: '#e8ded2' }} />
+                <div className="text-center">
+                  <div className="fw-bold" style={{ color: '#7a6a5c', fontSize: '1.8rem' }}>$5,732+</div>
+                  <div style={{ color: '#9a8a7c', fontSize: '0.85rem' }}>for 1.5 years</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Daily Dose Japanese */}
+            <div className="col-md-6">
+              <div className="d-flex flex-column h-100 p-4 bg-white" style={{ borderRadius: 16, border: '2px solid #b85c2a' }}>
+                <div className="mb-2" style={{ fontSize: '1rem' }}>⭐⭐⭐⭐⭐</div>
+                <span className="align-self-start px-3 py-1 mb-4" style={{ background: '#fbe9dc', color: '#b85c2a', borderRadius: 20, fontSize: '0.85rem' }}>
+                  Daily Dose Japanese
+                </span>
+                <ul className="list-unstyled flex-grow-1 mb-4">
+                  {['Active conversations', 'Personalized plan', 'Team of senseis', 'Discord community'].map(item => (
+                    <li key={item} className="d-flex align-items-center gap-2 mb-3" style={{ color: '#3a2010' }}>
+                      <span className="d-inline-flex align-items-center justify-content-center" style={{ width: 18, height: 18, background: '#b85c2a', borderRadius: 4, color: '#fff', fontSize: '0.75rem' }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <hr style={{ borderColor: '#f0e0cc' }} />
+                <div className="text-center">
+                  <div className="fw-bold" style={{ color: '#b85c2a', fontSize: '1.8rem' }}>$230/mo</div>
+                  <div style={{ color: '#9a8a7c', fontSize: '0.85rem' }}>cancel anytime</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-5">
+            <p className="mb-3" style={{ color: '#4a3728' }}>See the difference for yourself.</p>
+            <a
+              href="https://calendly.com/daily_dose_japanese/roadmap_session"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn fw-semibold px-4 py-2"
+              style={{ background: '#b85c2a', color: '#fff', border: 'none', borderRadius: 8 }}
+            >
+              Start free session →
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Video + Student Reviews */}
       <div className="py-5" style={{ background: '#f5ede0' }}>
         <div className="container">
-          <div className="row g-5 align-items-start">
+
+          {/* Title */}
+          <div className="text-center mb-5">
+            <p className="mb-2 fw-semibold" style={{ color: '#b85c2a', letterSpacing: '0.15em', fontSize: '0.85rem' }}>
+              REAL STUDENT STORIES
+            </p>
+            <h2 className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem' }}>
+              From zero to real conversations
+            </h2>
+          </div>
+
+          <div className="row g-4 align-items-center">
 
             {/* YouTube embed */}
             <div className="col-lg-6">
@@ -125,23 +212,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Student Reviews */}
+            {/* Student Reviews — arrow carousel, 2 visible */}
             <div className="col-lg-6">
-              <h2 className="fw-bold mb-4" style={{ color: '#b85c2a' }}>Student Reviews</h2>
-              {[
-                'There\'s no shortcut to learning a language. Having a native speaking tutor helps with the confidence to speak in real situations and given that DDJ is such a vibrant community, there\'s so much to learn from the discord group as well!',
-                'Im quite shy but easily got in a comfortable rhythm with Yuki. Yuki welcomes any and all questions I ask, and I\'m never left confused by the end of the lesson. She fits well to my pace of learning and gives really good everyday examples during my lessons.',
-                'ryo is very encouraging when it comes to any topic. Whether it\'s a difficulty, interest or other, you can rely on her always wanting the best for you, pushing you towards your goal, very kindly and understanding, without any pressure. i feel very comfortable, even if i am nervous about doing something that I\'m not good at.',
-              ].map((review, i) => (
-                <div
-                  key={i}
-                  className="p-3 mb-3 bg-white"
-                  style={{ borderRadius: 10, border: '1.5px solid #e0c9b0' }}
-                >
-                  <p className="mb-2 small" style={{ color: '#3a2010', lineHeight: 1.6 }}>{review}</p>
-                  <div className="text-end" style={{ fontSize: '1.1rem' }}>⭐⭐⭐⭐⭐</div>
-                </div>
-              ))}
+              <ReviewsCarousel />
             </div>
 
           </div>
