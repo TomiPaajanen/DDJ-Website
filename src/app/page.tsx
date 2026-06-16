@@ -224,7 +224,7 @@ export default function Home() {
       <div className="py-5" style={{ background: '#f5ede0' }}>
         <div className="container">
           <h2 className="text-center fw-bold mb-5" style={{ color: '#b85c2a' }}>Meet Our Teachers</h2>
-          <div className="row row-cols-3 row-cols-md-6 g-4 justify-content-center">
+          <div className="row row-cols-3 row-cols-md-5 g-4 justify-content-center">
             {teachers.map(t => (
               <div key={t.firstName} className="col text-center">
                 <div
@@ -238,25 +238,26 @@ export default function Home() {
                 >
                   <Image
                     src={`/${t.image}`}
-                    alt={`${t.firstName} sensei`}
+                    alt={t.firstName}
                     width={110}
                     height={110}
-                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                    style={{ objectFit: 'cover', width: '100%', height: '100%', transform: 'scale(1.35)' }}
                   />
                 </div>
-                <div>
-                  <p className="mb-0 fw-bold" style={{ color: '#b85c2a', fontSize: '1rem' }}>
-                    {t.firstName} <span style={{ fontWeight: 400, fontSize: '0.85rem' }}>sensei</span>
-                  </p>
-                  <p className="mb-1 small text-muted">in {t.location}</p>
-                  <div className="d-none d-md-block">
-                    {t.desc.map((line, j) => (
-                      <p key={j} className="mb-0" style={{ color: '#4a3728', fontSize: '0.8rem' }}>{line}</p>
-                    ))}
-                  </div>
-                </div>
+                <p className="mb-0 fw-bold" style={{ color: '#b85c2a', fontSize: '1rem' }}>
+                  {t.firstName}
+                </p>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-5">
+            <Link
+              href="/teachers"
+              className="btn fw-bold px-4 py-2"
+              style={{ background: '#b85c2a', color: '#fff', border: 'none', borderRadius: 8 }}
+            >
+              More about teachers →
+            </Link>
           </div>
         </div>
       </div>
