@@ -25,7 +25,7 @@ export default function Home() {
           <div className="row align-items-center" >
             <div className="col-lg-7">
               <h1 className="display-4 fw-bold mb-3" style={{ color: '#2a1a0e' }}>
-                Ready to actually <em style={{ color: '#b85c2a', fontStyle: 'italic' }}>speak</em> Japanese?
+                Ready to actually <span style={{ whiteSpace: 'nowrap' }}><em style={{ color: '#b85c2a', fontStyle: 'italic' }}>speak</em> Japanese?</span>
               </h1>
               <p className="lead mb-4" style={{ color: '#000' }}>
                 Most learners get stuck with apps and textbooks. At DDJ, you&apos;ll have real conversations with native teachers — personalized to your goals and lifestyle.
@@ -64,7 +64,7 @@ export default function Home() {
             <p className="mb-2 fw-semibold" style={{ color: '#b85c2a', letterSpacing: '0.15em', fontSize: '0.85rem' }}>
               WHAT MAKES US DIFFERENT
             </p>
-            <h2 className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem' }}>
+            <h2 className="fw-bold section-title" style={{ color: '#2a1a0e' }}>
               The DDJ way of learning
             </h2>
           </div>
@@ -115,7 +115,7 @@ export default function Home() {
             <p className="mb-2 fw-semibold" style={{ color: '#b85c2a', letterSpacing: '0.15em', fontSize: '0.85rem' }}>
               WHY CHOOSE DDJ
             </p>
-            <h2 className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem' }}>
+            <h2 className="fw-bold section-title" style={{ color: '#2a1a0e' }}>
               Not your typical Japanese school
             </h2>
           </div>
@@ -192,7 +192,7 @@ export default function Home() {
             <p className="mb-2 fw-semibold" style={{ color: '#b85c2a', letterSpacing: '0.15em', fontSize: '0.85rem' }}>
               REAL STUDENT STORIES
             </p>
-            <h2 className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem' }}>
+            <h2 className="fw-bold section-title" style={{ color: '#2a1a0e' }}>
               From zero to real conversations
             </h2>
           </div>
@@ -223,7 +223,7 @@ export default function Home() {
       {/* Teachers */}
       <div id="teachers" className="py-5" style={{ background: '#fbf7f0' }}>
         <div className="container">
-          <h2 className="text-center fw-bold mb-5" style={{ color: '#b85c2a' }}>Meet Our Teachers</h2>
+          <h2 className="text-center fw-bold mb-5 section-title" style={{ color: '#b85c2a' }}>Meet Our Teachers</h2>
           <div className="row row-cols-3 row-cols-md-5 g-4 justify-content-center">
             {teachers.map(t => (
               <div key={t.firstName} className="col text-center">
@@ -268,7 +268,7 @@ export default function Home() {
       <div id="faq" className="py-5" style={{ background: '#ffffff' }}>
         <div className="container">
           <div className="text-center mb-5">
-            <h2 className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem' }}>
+            <h2 className="fw-bold section-title" style={{ color: '#2a1a0e' }}>
               FAQ
             </h2>
           </div>
@@ -279,7 +279,7 @@ export default function Home() {
       {/* Closing Banner */}
       <div style={{ background: '#3d1f0f' }}>
         <div className="container text-center py-5">
-          <h2 className="fw-bold mb-3" style={{ color: '#fdf6ec', fontSize: '2.5rem' }}>
+          <h2 className="fw-bold mb-3 section-title" style={{ color: '#fdf6ec' }}>
             Ready to find your daily dose?
           </h2>
           <p className="mb-4" style={{ color: '#d9c4b0', fontSize: '1.05rem' }}>
@@ -292,7 +292,7 @@ export default function Home() {
             className="btn fw-bold px-5 py-3"
             style={{ background: '#d2691e', color: '#fff', border: 'none', borderRadius: 8, fontSize: '1.1rem' }}
           >
-            Book my free roadmap session →
+            Ready to start speaking Japanese?
           </a>
           <p className="mt-4 mb-0" style={{ color: '#d9c4b0', fontSize: '0.9rem' }}>
             🔥 Only 10 free spots open each month (20th–30th)

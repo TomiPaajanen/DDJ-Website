@@ -61,3 +61,13 @@ a:hover .card {
     min-width: calc(50% - 0.5rem);
   }
 }
+
+/* Section titles: smaller font on mobile */
+.section-title {
+  font-size: 2.5rem;
+}
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
