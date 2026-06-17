@@ -11,6 +11,7 @@ interface NavbarProps {
 }
 
 const ACCENT = '#b85c2a';
+const BUTTON_COLOR = '#b85c2a';
 
 export default function Navbar({
   background = '#f5ede0',
@@ -23,7 +24,7 @@ export default function Navbar({
 
   const linkClass = 'nav-link fw-medium text-dark';
   const buttonStyle = {
-    background: '#b85c2a',
+    background: BUTTON_COLOR,
     color: '#fff',
     borderRadius: 8,
     border: 'none',

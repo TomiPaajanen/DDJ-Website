@@ -276,11 +276,35 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Closing Banner */}
+      <div style={{ background: '#3d1f0f' }}>
+        <div className="container text-center py-5">
+          <h2 className="fw-bold mb-3" style={{ color: '#fdf6ec', fontSize: '2.5rem' }}>
+            Ready to find your daily dose?
+          </h2>
+          <p className="mb-4" style={{ color: '#d9c4b0', fontSize: '1.05rem' }}>
+            Most students started from zero — real conversations within 3–6 months.
+          </p>
+          <a
+            href="https://calendly.com/daily_dose_japanese/roadmap_session"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn fw-bold px-5 py-3"
+            style={{ background: '#d2691e', color: '#fff', border: 'none', borderRadius: 8, fontSize: '1.1rem' }}
+          >
+            Book my free roadmap session →
+          </a>
+          <p className="mt-4 mb-0" style={{ color: '#d9c4b0', fontSize: '0.9rem' }}>
+            🔥 Only 10 free spots open each month (20th–30th)
+          </p>
+        </div>
+      </div>
+
       {/* Footer */}
-      <footer className="text-center text-muted py-4 border-top small">
+      <footer className="text-center py-4 small" style={{ background: '#fbf7f0', borderTop: '1px solid #f0e0cc', color: '#7a6a5c' }}>
         <div className="mb-2">
-          <Link href="/privacy" className="text-muted text-decoration-none mx-2">Privacy Policy</Link>
-          <Link href="/terms" className="text-muted text-decoration-none mx-2">Terms of Service</Link>
+          <Link href="/privacy" className="text-decoration-none mx-2" style={{ color: '#7a6a5c' }}>Privacy Policy</Link>
+          <Link href="/terms" className="text-decoration-none mx-2" style={{ color: '#7a6a5c' }}>Terms of Service</Link>
         </div>
         © {new Date().getFullYear()} Daily Dose Japanese. All rights reserved.
       </footer>
