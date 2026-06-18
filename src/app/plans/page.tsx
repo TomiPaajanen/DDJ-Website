@@ -1,181 +1,262 @@
+'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 import Navbar from '../Navbar';
 
-const plans = [
+const ACCENT = '#b85c2a';
+const DARK = '#4A1B0C';
+const CALENDLY = 'https://calendly.com/daily_dose_japanese/roadmap_session';
+
+type PlanId = 'essential' | 'accelerator' | 'dual';
+type Level = 'beginner' | 'intermediate' | 'advanced';
+type Goal = 'conversation' | 'travel' | 'jlpt' | 'anime';
+
+interface Plan {
+  id: PlanId;
+  name: string;
+  freq: string;
+  lessons: number;
+  price: string;
+  tagline: string;
+  features: string[];
+  popular: boolean;
+  rec: Record<Level, Goal[]>;
+}
+
+const plans: Plan[] = [
   {
+    id: 'essential',
     name: 'Essential Foundation',
+    freq: '1 lesson/week',
+    lessons: 4,
+    price: '$230',
     tagline: 'Build your core confidence.',
-    price: 230,
-    highlight: false,
-    badge: null,
-    features: [
-      { text: 'Speak Japanese', bold: null, suffix: '1/week' },
-      { text: 'Basic materials access', bold: null, suffix: null },
-      { text: 'General progress review', bold: null, suffix: null },
-    ],
+    features: ['Speak Japanese 1x/week', 'Basic materials access', 'General progress review'],
+    popular: false,
+    rec: { beginner: ['travel', 'anime'], intermediate: [], advanced: ['conversation', 'travel', 'anime'] },
   },
   {
+    id: 'accelerator',
     name: 'Fluency Accelerator',
+    freq: '2 lessons/week',
+    lessons: 8,
+    price: '$440',
     tagline: 'The fastest way to natural conversation.',
-    price: 440,
-    highlight: true,
-    badge: '⭐ MOST POPULAR',
-    features: [
-      { text: 'Speak Japanese', bold: '2 times week', suffix: null },
-      { text: 'Real-time correction from native teachers', bold: null, suffix: null },
-      { text: 'Personalized learning plan', bold: null, suffix: null },
-      { text: 'Structured progress tracking', bold: null, suffix: null },
-    ],
+    features: ['Speak Japanese 2x/week', 'Real-time correction from native teachers', 'Personalized learning plan', 'Structured progress tracking'],
+    popular: true,
+    rec: { beginner: ['conversation', 'jlpt'], intermediate: ['conversation', 'travel', 'anime', 'jlpt'], advanced: [] },
   },
   {
+    id: 'dual',
     name: 'Dual Coach Plan',
+    freq: '3 lessons/week',
+    lessons: 12,
+    price: '$680',
     tagline: 'Train with 2 native teachers.',
-    price: 680,
-    highlight: false,
-    badge: null,
-    features: [
-      { text: 'Lessons', bold: '3 times week', suffix: null },
-      { text: 'Real-time correction from native teachers', bold: null, suffix: null },
-      { text: 'Access to 2 teachers', bold: null, suffix: null },
-      { text: 'Personalised learning plan for exams or relocation', bold: null, suffix: null },
-    ],
+    features: ['Lessons 3x/week', 'Real-time correction from native teachers', 'Access to 2 teachers', 'Personalised plan for exams or relocation'],
+    popular: false,
+    rec: { beginner: ['jlpt'], intermediate: ['jlpt'], advanced: ['jlpt'] },
   },
 ];
 
-const ACCENT = '#b85c2a';
-const BG = '#f5ede0';
+const visibility: Record<Level, Record<Goal, PlanId[]>> = {
+  beginner: {
+    travel: ['essential', 'accelerator'],
+    anime: ['essential', 'accelerator'],
+    conversation: ['accelerator', 'dual'],
+    jlpt: ['accelerator', 'dual'],
+  },
+  intermediate: {
+    travel: ['accelerator', 'dual'],
+    anime: ['accelerator', 'dual'],
+    conversation: ['accelerator', 'dual'],
+    jlpt: ['accelerator', 'dual'],
+  },
+  advanced: {
+    travel: ['essential', 'accelerator'],
+    anime: ['essential', 'accelerator'],
+    conversation: ['essential', 'accelerator'],
+    jlpt: ['accelerator', 'dual'],
+  },
+};
+
+const levels: { id: Level; label: string }[] = [
+  { id: 'beginner', label: 'Beginner' },
+  { id: 'intermediate', label: 'Intermediate' },
+  { id: 'advanced', label: 'Advanced' },
+];
+
+const goals: { id: Goal; label: string; icon: string }[] = [
+  { id: 'conversation', label: 'Conversation', icon: '💬' },
+  { id: 'travel', label: 'Travel', icon: '✈️' },
+  { id: 'jlpt', label: 'JLPT prep', icon: '📜' },
+  { id: 'anime', label: 'Anime / culture', icon: '🎬' },
+];
 
 export default function Plans() {
+  const [level, setLevel] = useState<Level>('beginner');
+  const [goal, setGoal] = useState<Goal | null>('conversation');
+
+  const pill = (selected: boolean): React.CSSProperties => ({
+    padding: '8px 18px',
+    borderRadius: 20,
+    border: `1.5px solid ${selected ? ACCENT : '#D3D1C7'}`,
+    background: selected ? ACCENT : 'transparent',
+    color: selected ? '#fff' : '#3a2010',
+    fontSize: 14,
+    cursor: 'pointer',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 6,
+    fontWeight: 500,
+  });
+
+  const visible = goal ? plans.filter(p => visibility[level][goal].includes(p.id)) : [];
+
   return (
-    <div className="container-fluid px-0" style={{ background: BG, minHeight: '100vh' }}>
+    <div className="container-fluid px-0" style={{ background: '#ffffff', minHeight: '100vh' }}>
+      <Navbar background="#FAF6F1" highlightPlans />
 
-      <Navbar background="#FAF6F1" paddingY="0.75rem" highlightPlans />
+      <div className="container py-5" style={{ maxWidth: 960 }}>
 
-      {/* Hero */}
-      <div className="text-center pt-5 pb-4 px-3">
-        <p className="mb-1 fw-medium" style={{ color: ACCENT, letterSpacing: '0.03em' }}>
-          Daily Dose Japanese
-        </p>
-        <h1 className="fw-bold" style={{ color: '#3a2010', fontSize: '2.4rem' }}>
-          Private Lesson Packages
-        </h1>
-      </div>
+        {/* Header */}
+        <div className="text-center mb-5">
+          <p className="mb-2 fw-semibold" style={{ color: ACCENT, letterSpacing: '0.15em', fontSize: '0.8rem' }}>
+            FIND YOUR PLAN
+          </p>
+          <h1 className="fw-bold section-title" style={{ color: DARK }}>
+            Which plan fits you?
+          </h1>
+          <p style={{ color: '#7a6a5c' }}>
+            Tell us a little about you — we&apos;ll show you the right starting point.
+          </p>
+        </div>
 
-      {/* Pricing cards */}
-      <div className="container pb-5">
-        <div className="row align-items-stretch justify-content-center g-4" style={{ maxWidth: 960, margin: '0 auto' }}>
-          {plans.map(plan => (
-            <div key={plan.name} className="col-md-4 d-flex">
-              <div
-                className="d-flex flex-column w-100 p-4 bg-white position-relative"
-                style={{
-                  borderRadius: 16,
-                  border: plan.highlight ? `2px solid ${ACCENT}` : '2px solid transparent',
-                  boxShadow: plan.highlight
-                    ? `0 8px 32px rgba(184,92,42,0.15)`
-                    : '0 2px 16px rgba(0,0,0,0.06)',
-                  marginTop: plan.highlight ? 0 : '2rem',
-                }}
-              >
-                {/* Badge */}
-                {plan.badge && (
-                  <div
-                    className="position-absolute text-white fw-semibold px-3 py-1"
-                    style={{
-                      top: -18,
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      background: ACCENT,
-                      borderRadius: 20,
-                      fontSize: '0.8rem',
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
-                    {plan.badge}
+        {/* Your level */}
+        <div className="mb-4">
+          <p className="mb-2 fw-semibold" style={{ color: '#7a6a5c', fontSize: 12, letterSpacing: '0.05em' }}>YOUR LEVEL</p>
+          <div className="d-flex flex-wrap gap-2">
+            {levels.map(l => (
+              <button key={l.id} onClick={() => setLevel(l.id)} style={pill(level === l.id)}>
+                {l.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Your goal */}
+        <div className="mb-5">
+          <p className="mb-2 fw-semibold" style={{ color: '#7a6a5c', fontSize: 12, letterSpacing: '0.05em' }}>YOUR GOAL</p>
+          <div className="d-flex flex-wrap gap-2">
+            {goals.map(g => (
+              <button key={g.id} onClick={() => setGoal(g.id)} style={pill(goal === g.id)}>
+                <span>{g.icon}</span>{g.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Plans */}
+        {goal && (
+          <div>
+            <div style={{ borderTop: '1px solid #eadfce', paddingTop: '1.5rem', marginBottom: '1rem' }} />
+
+            <div className="row g-3">
+              {visible.map(p => {
+                const isRec = p.rec[level].includes(goal);
+                return (
+                  <div key={p.id} className="col-md-6">
+                    <div
+                      className="d-flex flex-column h-100 position-relative"
+                      style={{
+                        background: '#fff',
+                        border: isRec ? `2px solid ${ACCENT}` : '1px solid #eadfce',
+                        borderRadius: 16,
+                        padding: '1.5rem',
+                        boxShadow: isRec ? '0 8px 24px rgba(184,92,42,0.12)' : '0 2px 12px rgba(0,0,0,0.05)',
+                      }}
+                    >
+                      {(isRec || p.popular) && (
+                        <span
+                          className="position-absolute fw-semibold"
+                          style={{
+                            top: -12,
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            background: isRec ? ACCENT : DARK,
+                            color: '#fff',
+                            fontSize: 11,
+                            padding: '3px 12px',
+                            borderRadius: 20,
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {isRec ? 'Recommended for you' : 'Most popular'}
+                        </span>
+                      )}
+
+                      <div className="mb-3">
+                        <p className="mb-1 fw-bold" style={{ color: DARK, fontSize: '1.05rem' }}>{p.name}</p>
+                        <p className="mb-0" style={{ color: '#7a6a5c', fontSize: 13 }}>{p.tagline}</p>
+                      </div>
+
+                      <div className="d-flex align-items-center gap-2 mb-3" style={{ background: '#FAECE7', borderRadius: 8, padding: '6px 10px' }}>
+                        <span>📅</span>
+                        <span style={{ fontSize: 12, color: '#712B13', fontWeight: 500 }}>{p.lessons} lessons/month</span>
+                      </div>
+
+                      <div className="flex-grow-1 mb-3">
+                        {p.features.map((f, i) => (
+                          <div key={i} className="d-flex align-items-start gap-2 mb-2">
+                            <span style={{ color: ACCENT, fontSize: 13, marginTop: 2 }}>✓</span>
+                            <span style={{ fontSize: 13, color: '#3a2010', lineHeight: 1.4 }}>{f}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div>
+                        <p className="mb-2">
+                          <span className="fw-bold" style={{ fontSize: '1.6rem', color: isRec ? ACCENT : DARK }}>{p.price}</span>
+                          <span style={{ fontSize: 12, color: '#7a6a5c' }}>/month</span>
+                        </p>
+                        <a
+                          href={CALENDLY}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="d-block text-center fw-semibold text-decoration-none"
+                          style={{
+                            background: isRec ? ACCENT : 'transparent',
+                            color: isRec ? '#fff' : ACCENT,
+                            border: `1.5px solid ${ACCENT}`,
+                            padding: '10px 12px',
+                            borderRadius: 8,
+                            fontSize: 13,
+                          }}
+                        >
+                          Start with {p.lessons} lessons/month →
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                )}
-
-                {/* Name & tagline */}
-                <h3
-                  className="fw-bold mb-1"
-                  style={{
-                    color: plan.highlight ? ACCENT : '#3a2010',
-                    fontSize: plan.highlight ? '1.5rem' : '1.25rem',
-                  }}
-                >
-                  {plan.name}
-                </h3>
-                <p className="text-muted small mb-4">{plan.tagline}</p>
-
-                {/* Features */}
-                <ul className="list-unstyled flex-grow-1 mb-4">
-                  {plan.features.map((f, i) => (
-                    <li key={i} className="mb-3 d-flex align-items-start gap-2">
-                      <span className="fw-bold mt-1" style={{ color: ACCENT, fontSize: '1rem' }}>✓</span>
-                      <span style={{ color: '#4a3728', lineHeight: 1.4 }}>
-                        {f.text}
-                        {(f.bold || f.suffix) && (
-                          <>
-                            <br />
-                            <strong style={{ fontSize: '1.05rem' }}>{f.bold ?? f.suffix}</strong>
-                          </>
-                        )}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Price */}
-                <div className="mb-4">
-                  <span style={{ fontSize: '1.1rem', color: ACCENT, verticalAlign: 'top', marginTop: 8, display: 'inline-block' }}>$</span>
-                  <span className="fw-bold" style={{ fontSize: '3rem', color: ACCENT, lineHeight: 1 }}>{plan.price}</span>
-                  <span className="text-muted">/month</span>
-                </div>
-
-                {/* CTA */}
-                <a
-                  href="https://calendly.com/daily_dose_japanese/roadmap_session"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn w-100 fw-bold py-2"
-                  style={
-                    plan.highlight
-                      ? { background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', border: 'none', borderRadius: 50 }
-                      : { background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', border: 'none', borderRadius: 50 }
-                  }
-                  onMouseEnter={undefined}
-                >
-                  Book My Free Session
-                </a>
-              </div>
+                );
+              })}
             </div>
-          ))}
-        </div>
 
-        {/* Notes */}
-        <div className="text-center mt-5" style={{ color: '#7a5c48' }}>
-          <p className="mb-2">
-            You can choose from 1, 2, or 3 lessons per week.<br />
-            Each lesson is 50min.
-          </p>
-          <p className="mb-3">
-            Payment is via Stripe (credit card) and<br />
-            renews automatically every 1st day on each months.
-          </p>
-          <p className="small mb-0" style={{ opacity: 0.75 }}>JPY: 36,800 / 69,000 / 108,000</p>
-          <p className="small" style={{ opacity: 0.75 }}>EUR: 198 / 380 / 589</p>
-        </div>
+            <p className="text-center mt-4 mb-0" style={{ color: '#7a6a5c', fontSize: 13 }}>
+              Not sure which to pick? We&apos;ll figure it out together on the free call.
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Footer */}
-      <footer className="text-center py-4 border-top small" style={{ color: '#9a7a68', borderColor: '#e0d0c0 !important' }}>
+      <footer className="text-center py-4 small" style={{ background: '#fbf7f0', borderTop: '1px solid #f0e0cc', color: '#7a6a5c' }}>
         <div className="mb-2">
-          <Link href="/privacy" className="text-decoration-none mx-2" style={{ color: '#9a7a68' }}>Privacy Policy</Link>
-          <Link href="/terms" className="text-decoration-none mx-2" style={{ color: '#9a7a68' }}>Terms of Service</Link>
+          <Link href="/privacy" className="text-decoration-none mx-2" style={{ color: '#7a6a5c' }}>Privacy Policy</Link>
+          <Link href="/terms" className="text-decoration-none mx-2" style={{ color: '#7a6a5c' }}>Terms of Service</Link>
         </div>
         © {new Date().getFullYear()} Daily Dose Japanese. All rights reserved.
       </footer>
-
     </div>
   );
 }
