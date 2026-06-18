@@ -49,7 +49,7 @@ export default function Plans() {
   return (
     <div className="container-fluid px-0" style={{ background: BG, minHeight: '100vh' }}>
 
-      <Navbar background="#ffffff" brandFontSize="1.2rem" subtitleFontSize="0.6rem" paddingY="0.75rem" highlightPlans />
+      <Navbar background="#FAF6F1" paddingY="0.75rem" highlightPlans />
 
       {/* Hero */}
       <div className="text-center pt-5 pb-4 px-3">

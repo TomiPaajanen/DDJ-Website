@@ -1,11 +1,10 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface NavbarProps {
   background?: string;
-  brandFontSize?: string;
-  subtitleFontSize?: string;
   paddingY?: string;
   highlightPlans?: boolean;
 }
@@ -14,9 +13,7 @@ const ACCENT = '#b85c2a';
 const BUTTON_COLOR = '#b85c2a';
 
 export default function Navbar({
-  background = '#f5ede0',
-  brandFontSize = '1.1rem',
-  subtitleFontSize = '0.8rem',
+  background = '#FAF6F1',
   paddingY = '0.75rem',
   highlightPlans = false,
 }: NavbarProps) {
@@ -33,9 +30,15 @@ export default function Navbar({
   return (
     <nav className="navbar navbar-light border-bottom shadow-sm px-4" style={{ background, paddingTop: paddingY, paddingBottom: paddingY }}>
       <div className="container-fluid px-0 d-flex align-items-center">
-        <Link href="/" className="navbar-brand d-flex flex-column" style={{ fontFamily: 'var(--font-kaisei-decol)', color: ACCENT, fontSize: brandFontSize, fontWeight: 700 }}>
-          <span>Daily Dose Japanese</span>
-          <span style={{ fontSize: subtitleFontSize, fontWeight: 400 }}>Online Japanese School</span>
+        <Link href="/" className="navbar-brand d-flex align-items-center">
+          <Image
+            src="/ddj_logo.png"
+            alt="Daily Dose Japanese"
+            width={1016}
+            height={152}
+            priority
+            className="navbar-logo"
+          />
         </Link>
 
         {/* Desktop menu */}

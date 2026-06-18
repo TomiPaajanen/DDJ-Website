@@ -71,3 +71,14 @@ a:hover .card {
     font-size: 1.6rem;
   }
 }
+
+/* Navbar logo: smaller on mobile */
+.navbar-logo {
+  height: 44px;
+  width: auto;
+}
+@media (max-width: 767px) {
+  .navbar-logo {
+    height: 30px;
+  }
+}
