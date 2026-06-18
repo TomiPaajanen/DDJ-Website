@@ -43,7 +43,7 @@ export default function Navbar({
 
         {/* Desktop menu */}
         <div className="d-none d-lg-flex ms-auto gap-3 align-items-center">
-          <Link className={linkClass} href="/plans">About</Link>
+          <Link className={linkClass} href="/about">About</Link>
           <Link className={linkClass} href="/#teachers">Teachers</Link>
           <Link className={linkClass} href="/plans" style={highlightPlans ? { color: ACCENT } : undefined}>Plans</Link>
           <Link className={linkClass} href="/#faq">FAQ</Link>
@@ -76,7 +76,7 @@ export default function Navbar({
       {open && (
         <div className="d-lg-none w-100">
           <div className="d-flex flex-column gap-2 pt-3 pb-2">
-            <Link className={linkClass} href="/plans" onClick={() => setOpen(false)}>About</Link>
+            <Link className={linkClass} href="/about" onClick={() => setOpen(false)}>About</Link>
             <Link className={linkClass} href="/#teachers" onClick={() => setOpen(false)}>Teachers</Link>
             <Link className={linkClass} href="/plans" style={highlightPlans ? { color: ACCENT } : undefined} onClick={() => setOpen(false)}>Plans</Link>
             <Link className={linkClass} href="/#faq" onClick={() => setOpen(false)}>FAQ</Link>

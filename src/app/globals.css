@@ -72,6 +72,16 @@ a:hover .card {
   }
 }
 
+/* About xmas image: half width on desktop, full on mobile */
+.xmas-img {
+  width: 50%;
+}
+@media (max-width: 767px) {
+  .xmas-img {
+    width: 100%;
+  }
+}
+
 /* Navbar logo: smaller on mobile */
 .navbar-logo {
   height: 44px;
