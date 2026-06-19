@@ -251,15 +251,13 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-5">
-            <a
-              href="https://canva.link/2u6i9e0sw66c6q4"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/teachers"
               className="btn fw-bold px-4 py-2"
               style={{ background: '#b85c2a', color: '#fff', border: 'none', borderRadius: 8 }}
             >
               More about teachers →
-            </a>
+            </Link>
           </div>
         </div>
       </div>
