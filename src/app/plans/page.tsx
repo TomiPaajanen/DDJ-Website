@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Navbar from '../Navbar';
+import { track } from '@vercel/analytics';
 
 const ACCENT = '#b85c2a';
 const DARK = '#4A1B0C';
@@ -232,6 +233,7 @@ export default function Plans() {
                             borderRadius: 8,
                             fontSize: 13,
                           }}
+                          onClick={() => track('Book Session', { location: `plans-${p.id}` })}
                         >
                           Start with {p.lessons} lessons/month →
                         </a>

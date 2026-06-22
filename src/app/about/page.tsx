@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '../Navbar';
+import BookButton from '../BookButton';
 
 const ACCENT = '#b85c2a';
 const DARK = '#2a1a0e';
-const CALENDLY = 'https://calendly.com/daily_dose_japanese/roadmap_session';
 
 const values = [
   { icon: '🎯', title: 'Personalized', desc: 'Lessons, homework, and pace — all adjusted to you and your goals' },
@@ -186,15 +186,13 @@ export default function About() {
           <p className="mb-4 fst-italic" style={{ color: '#e8c9a0' }}>
             Japanese is the vehicle. The destination is a richer life.
           </p>
-          <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noopener noreferrer"
+          <BookButton
+            location="about-banner"
             className="btn fw-bold px-5 py-3"
             style={{ background: '#d2691e', color: '#fff', border: 'none', borderRadius: 8, fontSize: '1.1rem' }}
           >
             Book my free roadmap session →
-          </a>
+          </BookButton>
           <p className="mt-3 mb-0" style={{ color: '#d9c4b0', fontSize: '0.9rem' }}>
             25 min · Free · No commitment
           </p>

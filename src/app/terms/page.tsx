@@ -1,39 +1,10 @@
 import Link from 'next/link';
+import Navbar from '../Navbar';
 
 export default function Terms() {
   return (
     <div className="container-fluid px-0">
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light border-bottom shadow-sm px-4 py-3" style={{ background: '#f5ede0' }}>
-        <Link href="/" className="navbar-brand d-flex flex-column" style={{ fontFamily: 'var(--font-kaisei-decol)', color: '#b85c2a', fontSize: '1.2rem', fontWeight: 700 }}>
-          <span>Daily Dose Japanese</span>
-          <span style={{ fontSize: '0.6rem', fontWeight: 400 }}>Online Japanese School</span>
-        </Link>
-        <div className="ms-auto">
-          <ul className="nav gap-1">
-            <li className="nav-item">
-              <Link className="nav-link fw-medium text-dark" href="/">About</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link fw-medium text-dark" href="/plans">Plans</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link fw-medium text-dark" href="/#faq">FAQ</Link>
-            </li>
-            <li className="nav-item ms-2">
-              <a
-                href="https://calendly.com/daily_dose_japanese/roadmap_session"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-sm px-3 fw-bold"
-                style={{ background: 'linear-gradient(to right, #b85c2a, #f3c789)', color: '#fff', borderRadius: 50, border: 'none' }}
-              >
-                Book My Free Session
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Content */}
       <div className="py-5 px-4" style={{ background: '#fbf7f0', minHeight: '100vh' }}>

@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { track } from '@vercel/analytics';
 
 interface NavbarProps {
   background?: string;
@@ -53,6 +54,7 @@ export default function Navbar({
             rel="noopener noreferrer"
             className="btn btn-sm px-3 fw-bold"
             style={buttonStyle}
+            onClick={() => track('Book Session', { location: 'navbar' })}
           >
             Book Session
           </a>
@@ -86,6 +88,7 @@ export default function Navbar({
               rel="noopener noreferrer"
               className="btn btn-sm px-3 fw-bold align-self-start"
               style={buttonStyle}
+              onClick={() => track('Book Session', { location: 'navbar-mobile' })}
             >
               Book Session
             </a>
