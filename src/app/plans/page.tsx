@@ -244,8 +244,11 @@ export default function Plans() {
               })}
             </div>
 
-            <p className="text-center mt-4 mb-0" style={{ color: '#7a6a5c', fontSize: 13 }}>
+            <p className="text-center mt-4 mb-1" style={{ color: '#7a6a5c', fontSize: 13 }}>
               Not sure which to pick? We&apos;ll figure it out together on the free call.
+            </p>
+            <p className="text-center mb-0" style={{ color: '#7a6a5c', fontSize: 13 }}>
+              We also accept payment in Euros and Japanese Yen.
             </p>
           </div>
         )}
