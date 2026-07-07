@@ -72,6 +72,55 @@ a:hover .card {
   }
 }
 
+/* Sticky CTA bouncing speech bubble */
+@keyframes cta-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.cta-bubble-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  transform: translateX(-50%);
+}
+
+.cta-bubble {
+  position: relative;
+  display: inline-block;
+  background: #fff;
+  border: 1.5px solid #f0d9c6;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  color: #7a6a5c;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  animation: cta-bounce 1.6s ease-in-out infinite;
+}
+
+.cta-bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-right: 1.5px solid #f0d9c6;
+  border-bottom: 1.5px solid #f0d9c6;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+@media (max-width: 767px) {
+  .cta-bubble {
+    white-space: normal;
+    max-width: 78vw;
+    text-align: center;
+    font-size: 0.78rem;
+  }
+}
+
 /* About xmas image: half width on desktop, full on mobile */
 .xmas-img {
   width: 50%;

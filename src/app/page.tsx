@@ -3,6 +3,7 @@ import Image from 'next/image';
 import FaqAccordion from './FaqAccordion';
 import Navbar from './Navbar';
 import ReviewsCarousel from './ReviewsCarousel';
+import StickyCTA from './StickyCTA';
 
 const teachers = [
   { firstName: 'Yuki',   image: 'yuki.png',   location: 'Canada', desc: ['5 years teaching experience', 'structured lessons'] },
@@ -271,10 +272,10 @@ export default function Home() {
       </div>
 
       {/* Closing Banner */}
-      <div style={{ background: '#3d1f0f' }}>
+      <div id="closing-cta" style={{ background: '#3d1f0f' }}>
         <div className="container text-center py-5">
           <h2 className="fw-bold mb-3 section-title" style={{ color: '#fdf6ec' }}>
-            Ready to find your daily dose?
+            Ready to start speaking Japanese?
           </h2>
           <p className="mb-4" style={{ color: '#d9c4b0', fontSize: '1.05rem' }}>
             Most students started from zero — real conversations within 3–6 months.
@@ -300,6 +301,8 @@ export default function Home() {
         </div>
         © {new Date().getFullYear()} Daily Dose Japanese. All rights reserved.
       </footer>
+
+      <StickyCTA />
 
     </div>
   );
