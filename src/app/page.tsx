@@ -3,7 +3,6 @@ import Image from 'next/image';
 import FaqAccordion from './FaqAccordion';
 import Navbar from './Navbar';
 import ReviewsCarousel from './ReviewsCarousel';
-import BookButton from './BookButton';
 
 const teachers = [
   { firstName: 'Yuki',   image: 'yuki.png',   location: 'Canada', desc: ['5 years teaching experience', 'structured lessons'] },
@@ -31,15 +30,15 @@ export default function Home() {
               <p className="lead mb-4" style={{ color: '#000' }}>
                 Most learners get stuck with apps and textbooks. At DDJ, you&apos;ll have real conversations with native teachers — personalized to your goals and lifestyle.
               </p>
-              <BookButton
-                location="hero"
+              <Link
+                href="/plans"
                 className="btn btn-lg fw-bold"
                 style={{ background: '#b85c2a', color: '#fff', borderRadius: 8, border: 'none' }}
               >
-                Book my free session →
-              </BookButton>
+                See plans &amp; book →
+              </Link>
               <p className="mt-2 mb-0" style={{ color: '#7a6a5c', fontSize: '0.9rem' }}>
-                25 min · Free · No commitment
+                25 min · $10 deposit, refunded
               </p>
             </div>
             <div className="col-lg-5 mt-4 mt-lg-0">
@@ -169,13 +168,13 @@ export default function Home() {
 
           <div className="text-center mt-5">
             <p className="mb-3" style={{ color: '#4a3728' }}>See the difference for yourself.</p>
-            <BookButton
-              location="home-comparison"
+            <Link
+              href="/plans"
               className="btn fw-semibold px-4 py-2"
               style={{ background: '#b85c2a', color: '#fff', border: 'none', borderRadius: 8 }}
             >
-              Start free session →
-            </BookButton>
+              Find your plan →
+            </Link>
           </div>
         </div>
       </div>
@@ -280,15 +279,15 @@ export default function Home() {
           <p className="mb-4" style={{ color: '#d9c4b0', fontSize: '1.05rem' }}>
             Most students started from zero — real conversations within 3–6 months.
           </p>
-          <BookButton
-            location="home-banner"
+          <Link
+            href="/plans"
             className="btn fw-bold px-5 py-3"
             style={{ background: '#d2691e', color: '#fff', border: 'none', borderRadius: 8, fontSize: '1.1rem' }}
           >
-            Ready to start speaking Japanese?
-          </BookButton>
+            Choose your plan &amp; book →
+          </Link>
           <p className="mt-4 mb-0" style={{ color: '#d9c4b0', fontSize: '0.9rem' }}>
-            🔥 Only 10 free spots open each month (20th–30th)
+            🔥 Only 10 spots each month
           </p>
         </div>
       </div>
