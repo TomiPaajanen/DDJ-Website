@@ -4,6 +4,7 @@ import FaqAccordion from './FaqAccordion';
 import Navbar from './Navbar';
 import ReviewsCarousel from './ReviewsCarousel';
 import StickyCTA from './StickyCTA';
+import YouTubeFacade from './YouTubeFacade';
 
 const teachers = [
   { firstName: 'Yuki',   image: 'yuki.png',   location: 'Canada', desc: ['5 years teaching experience', 'structured lessons'] },
@@ -48,6 +49,8 @@ export default function Home() {
                 alt="Student Learning Japanese"
                 width={500}
                 height={280}
+                priority
+                sizes="(max-width: 992px) 100vw, 500px"
                 className="img-fluid rounded shadow"
                 style={{ width: '100%', height: 'auto', }}
               />
@@ -196,16 +199,9 @@ export default function Home() {
 
           <div className="row g-4 align-items-center">
 
-            {/* YouTube embed */}
+            {/* YouTube embed (lazy facade) */}
             <div className="col-lg-6">
-              <div className="ratio ratio-16x9 rounded overflow-hidden shadow">
-                <iframe
-                  src="https://www.youtube.com/embed/ml-lYUJ4YO0"
-                  title="Daily Dose Japanese"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
+              <YouTubeFacade id="ml-lYUJ4YO0" title="Daily Dose Japanese" />
             </div>
 
             {/* Student Reviews — arrow carousel, 2 visible */}
