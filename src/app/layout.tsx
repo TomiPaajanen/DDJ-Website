@@ -21,8 +21,8 @@ const kaiseiDecol = Kaisei_Decol({
 });
 
 export const metadata: Metadata = {
-  title: "Daily Dose Japanese",
-  description: "Learn to actually speak Japanese with native teachers — personalized online lessons tailored to your goals.",
+  title: "Learn Japanese Online with Native Teachers — Daily Dose Japanese",
+  description: "Learn to actually speak Japanese with native teachers. Personalized online lessons tailored to your goals, level, and lifestyle.",
 };
 
 export default function RootLayout({

@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '../Navbar';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service — Daily Dose Japanese',
+  description: 'The terms and conditions for using the Daily Dose Japanese website and services.',
+};
 
 export default function Terms() {
   return (

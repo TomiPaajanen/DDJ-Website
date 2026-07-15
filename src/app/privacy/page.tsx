@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '../Navbar';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy — Daily Dose Japanese',
+  description: 'How Daily Dose Japanese collects, uses, and protects your personal data.',
+};
 
 export default function Privacy() {
   return (

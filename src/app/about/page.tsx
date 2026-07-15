@@ -1,7 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '../Navbar';
 import BookButton from '../BookButton';
+
+export const metadata: Metadata = {
+  title: 'About Daily Dose Japanese — Real Conversation, Real Progress',
+  description: 'Why we built Daily Dose Japanese: a school focused on real conversation and real progress, not just textbooks and exams.',
+};
 
 const ACCENT = '#b85c2a';
 const DARK = '#2a1a0e';

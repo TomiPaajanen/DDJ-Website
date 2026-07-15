@@ -1,7 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '../Navbar';
 import BookButton from '../BookButton';
+
+export const metadata: Metadata = {
+  title: 'Native Japanese Teachers — Online Conversation Lessons',
+  description: 'Meet our native Japanese teachers, each with their own style and specialty. Find your perfect match for online conversation lessons.',
+};
 
 const ACCENT = '#b85c2a';
 const DARK = '#2a1a0e';
