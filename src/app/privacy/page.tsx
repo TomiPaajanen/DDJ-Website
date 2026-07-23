@@ -23,7 +23,7 @@ export default function Privacy() {
 
             <h4 style={{ color: '#b85c2a', marginTop: '2rem' }}>1. Information We Collect</h4>
             <p>
-              When you book a free consultation through Calendly, you provide us with your name, email address, and timezone. This information is collected by Calendly (our scheduling partner) and shared with us so we can contact you and schedule your lesson.
+              When you book a consultation through Calendly, you provide us with your name, email address, and timezone. This information is collected by Calendly (our scheduling partner) and shared with us so we can contact you and schedule your lesson.
             </p>
 
             <h4 style={{ color: '#b85c2a', marginTop: '2rem' }}>2. How We Use Your Information</h4>
@@ -31,7 +31,7 @@ export default function Privacy() {
               We use your information solely to:
             </p>
             <ul>
-              <li>Schedule and conduct your free consultation</li>
+              <li>Schedule and conduct your consultation</li>
               <li>Send you lesson reminders and updates</li>
               <li>Communicate about your learning progress and goals</li>
             </ul>

@@ -44,16 +44,16 @@ export default function Home() {
               </p>
             </div>
             <div className="col-lg-5 mt-4 mt-lg-0">
-              <Image
-                src="/lesson.png"
-                alt="Student Learning Japanese"
-                width={500}
-                height={280}
-                priority
-                sizes="(max-width: 992px) 100vw, 500px"
+              <video
+                src="/emmisan-hp.mp4#t=0.2"
+                controls
+                playsInline
+                preload="metadata"
                 className="img-fluid rounded shadow"
-                style={{ width: '100%', height: 'auto', }}
-              />
+                style={{ width: '100%', height: 'auto', aspectRatio: '16 / 9', objectFit: 'cover' }}
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>

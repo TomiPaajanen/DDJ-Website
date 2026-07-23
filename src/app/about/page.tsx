@@ -197,10 +197,10 @@ export default function About() {
             className="btn fw-bold px-5 py-3"
             style={{ background: '#d2691e', color: '#fff', border: 'none', borderRadius: 8, fontSize: '1.1rem' }}
           >
-            Book my free roadmap session →
+            Book my roadmap session →
           </BookButton>
           <p className="mt-3 mb-0" style={{ color: '#d9c4b0', fontSize: '0.9rem' }}>
-            25 min · Free · No commitment
+            25 min · No commitment
           </p>
         </div>
       </div>
