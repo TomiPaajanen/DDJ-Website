@@ -49,7 +49,7 @@ export default function Home() {
                 controls
                 playsInline
                 preload="metadata"
-                className="img-fluid rounded shadow"
+                className="img-fluid rounded shadow hero-video"
                 style={{ width: '100%', height: 'auto', aspectRatio: '16 / 9', objectFit: 'cover' }}
               >
                 Your browser does not support the video tag.

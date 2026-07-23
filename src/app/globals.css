@@ -72,6 +72,13 @@ a:hover .card {
   }
 }
 
+/* Hide the big centered play button on mobile — keep only the bottom control bar */
+@media (max-width: 767px) {
+  .hero-video::-webkit-media-controls-overlay-play-button {
+    display: none;
+  }
+}
+
 /* Sticky CTA bouncing speech bubble */
 @keyframes cta-bounce {
   0%, 100% { transform: translateY(0); }
