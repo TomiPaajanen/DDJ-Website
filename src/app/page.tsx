@@ -4,7 +4,6 @@ import FaqAccordion from './FaqAccordion';
 import Navbar from './Navbar';
 import ReviewsCarousel from './ReviewsCarousel';
 import StickyCTA from './StickyCTA';
-import YouTubeFacade from './YouTubeFacade';
 
 const teachers = [
   { firstName: 'Yuki',   image: 'yuki.png',   location: 'Canada', desc: ['5 years teaching experience', 'structured lessons'] },
@@ -199,9 +198,18 @@ export default function Home() {
 
           <div className="row g-4 align-items-center">
 
-            {/* YouTube embed (lazy facade) */}
+            {/* Student story video */}
             <div className="col-lg-6">
-              <YouTubeFacade id="ml-lYUJ4YO0" title="Daily Dose Japanese" />
+              <video
+                src="/shawn-san.mp4#t=0.3"
+                controls
+                playsInline
+                preload="metadata"
+                className="img-fluid rounded shadow hero-video"
+                style={{ width: '100%', height: 'auto', aspectRatio: '16 / 9', objectFit: 'cover' }}
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
 
             {/* Student Reviews — arrow carousel, 2 visible */}
