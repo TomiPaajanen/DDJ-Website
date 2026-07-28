@@ -250,15 +250,41 @@ export default function Plans() {
 
       <HowItWorks />
 
-      {/* Book your session — Calendly embed */}
-      <div id="book" style={{ background: '#ffffff' }}>
-        <div className="container py-5" style={{ maxWidth: 1000 }}>
+      {/* Book your session — deposit + Calendly embed */}
+      <div id="book" style={{ background: '#fbf7f0' }}>
+        <div className="container py-5" style={{ maxWidth: 900 }}>
           <div className="text-center mb-4">
             <h2 className="fw-bold section-title" style={{ color: DARK }}>
               Pick your Roadmap Session time
             </h2>
+            <p style={{ color: '#7a6a5c' }}>
+              📅 Lessons start on the 1st of each month — complete this before then to join.
+            </p>
           </div>
-          <CalendlyEmbed />
+
+          {/* Deposit box */}
+          <div className="text-center mx-auto p-4" style={{ background: '#3d1f0f', borderRadius: 16, maxWidth: 620 }}>
+            <p className="mb-4" style={{ color: '#e8d5c5', fontSize: '1.05rem' }}>
+              Secure your spot first — $10, applied to your first month.
+            </p>
+            <a
+              href="https://buy.stripe.com/3cI00l2sG7A1dk84ug1ZS0v"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn fw-bold px-4 py-3"
+              style={{ background: '#c8895f', color: '#fff', border: 'none', borderRadius: 8, fontSize: '1.05rem' }}
+            >
+              Pay $10 deposit →
+            </a>
+          </div>
+
+          {/* Connector line */}
+          <div style={{ width: 2, height: 40, background: '#e0d0c0', margin: '0 auto' }} />
+
+          {/* Calendly embed */}
+          <div style={{ background: '#fff', borderRadius: 16, border: '1px solid #eadfce', padding: '0.75rem' }}>
+            <CalendlyEmbed />
+          </div>
         </div>
       </div>
 
