@@ -58,6 +58,34 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Student Video + Reviews */}
+      <div className="py-5" style={{ background: '#ffffff' }}>
+        <div className="container">
+          <div className="row g-4 align-items-center">
+
+            {/* Student story video */}
+            <div className="col-lg-6">
+              <video
+                src="/shawn-san.mp4#t=0.3"
+                controls
+                playsInline
+                preload="metadata"
+                className="img-fluid rounded shadow hero-video"
+                style={{ width: '100%', height: 'auto', aspectRatio: '16 / 9', objectFit: 'cover' }}
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            {/* Student Reviews — arrow carousel, 2 visible */}
+            <div className="col-lg-6">
+              <ReviewsCarousel />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       {/* Features */}
       <div style={{ background: '#ffffff' }}>
         <div className="container py-5">
@@ -178,45 +206,6 @@ export default function Home() {
             >
               Find your plan →
             </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Video + Student Reviews */}
-      <div className="py-5" style={{ background: '#ffffff' }}>
-        <div className="container">
-
-          {/* Title */}
-          <div className="text-center mb-5">
-            <p className="mb-2 fw-semibold" style={{ color: '#b85c2a', letterSpacing: '0.15em', fontSize: '0.85rem' }}>
-              REAL STUDENT STORIES
-            </p>
-            <h2 className="fw-bold section-title" style={{ color: '#2a1a0e' }}>
-              From zero to real conversations
-            </h2>
-          </div>
-
-          <div className="row g-4 align-items-center">
-
-            {/* Student story video */}
-            <div className="col-lg-6">
-              <video
-                src="/shawn-san.mp4#t=0.3"
-                controls
-                playsInline
-                preload="metadata"
-                className="img-fluid rounded shadow hero-video"
-                style={{ width: '100%', height: 'auto', aspectRatio: '16 / 9', objectFit: 'cover' }}
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
-
-            {/* Student Reviews — arrow carousel, 2 visible */}
-            <div className="col-lg-6">
-              <ReviewsCarousel />
-            </div>
-
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '../Navbar';
-import BookButton from '../BookButton';
 
 export const metadata: Metadata = {
   title: 'Native Japanese Teachers — Online Conversation Lessons',
@@ -148,13 +147,13 @@ export default function Teachers() {
           <p className="mb-4" style={{ color: '#d9c4b0', fontSize: '1.05rem' }}>
             That&apos;s what the session is for. We&apos;ll match you with the perfect fit.
           </p>
-          <BookButton
-            location="teachers-banner"
+          <Link
+            href="/plans"
             className="btn fw-bold px-5 py-3"
             style={{ background: '#d2691e', color: '#fff', border: 'none', borderRadius: 8, fontSize: '1.1rem' }}
           >
             Book my roadmap session →
-          </BookButton>
+          </Link>
           <p className="mt-3 mb-0" style={{ color: '#d9c4b0', fontSize: '0.9rem' }}>
             25 min · No commitment
           </p>

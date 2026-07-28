@@ -2,11 +2,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Navbar from '../Navbar';
-import { track } from '@vercel/analytics';
+import HowItWorks from '../HowItWorks';
+import CalendlyEmbed from '../CalendlyEmbed';
 
 const ACCENT = '#b85c2a';
 const DARK = '#4A1B0C';
-const CALENDLY = 'https://calendly.com/daily_dose_japanese/roadmap_session';
 
 type PlanId = 'essential' | 'accelerator' | 'dual';
 type Level = 'beginner' | 'intermediate' | 'advanced';
@@ -122,9 +122,6 @@ export default function Plans() {
 
         {/* Header */}
         <div className="text-center mb-5">
-          <p className="mb-2 fw-semibold" style={{ color: ACCENT, letterSpacing: '0.15em', fontSize: '0.8rem' }}>
-            FIND YOUR PLAN
-          </p>
           <h1 className="fw-bold section-title" style={{ color: DARK }}>
             Which plan fits you?
           </h1>
@@ -221,9 +218,7 @@ export default function Plans() {
                           <span style={{ fontSize: 12, color: '#7a6a5c' }}>/month</span>
                         </p>
                         <a
-                          href={CALENDLY}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href="#book"
                           className="d-block text-center fw-semibold text-decoration-none"
                           style={{
                             background: isRec ? ACCENT : 'transparent',
@@ -233,7 +228,6 @@ export default function Plans() {
                             borderRadius: 8,
                             fontSize: 13,
                           }}
-                          onClick={() => track('Book Session', { location: `plans-${p.id}` })}
                         >
                           Start with {p.lessons} lessons/month →
                         </a>
@@ -252,6 +246,20 @@ export default function Plans() {
             </p>
           </div>
         )}
+      </div>
+
+      <HowItWorks />
+
+      {/* Book your session — Calendly embed */}
+      <div id="book" style={{ background: '#ffffff' }}>
+        <div className="container py-5" style={{ maxWidth: 1000 }}>
+          <div className="text-center mb-4">
+            <h2 className="fw-bold section-title" style={{ color: DARK }}>
+              Pick your Roadmap Session time
+            </h2>
+          </div>
+          <CalendlyEmbed />
+        </div>
       </div>
 
       {/* Footer */}

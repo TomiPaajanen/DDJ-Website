@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { track } from '@vercel/analytics';
 
 interface NavbarProps {
   background?: string;
@@ -48,16 +47,13 @@ export default function Navbar({
           <Link className={linkClass} href="/teachers">Teachers</Link>
           <Link className={linkClass} href="/plans" style={highlightPlans ? { color: ACCENT } : undefined}>Plans</Link>
           <Link className={linkClass} href="/#faq">FAQ</Link>
-          <a
-            href="https://calendly.com/daily_dose_japanese/roadmap_session"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/plans"
             className="btn btn-sm px-3 fw-bold"
             style={buttonStyle}
-            onClick={() => track('Book Session', { location: 'navbar' })}
           >
             Book Session
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger button */}
@@ -82,16 +78,14 @@ export default function Navbar({
             <Link className={linkClass} href="/teachers" onClick={() => setOpen(false)}>Teachers</Link>
             <Link className={linkClass} href="/plans" style={highlightPlans ? { color: ACCENT } : undefined} onClick={() => setOpen(false)}>Plans</Link>
             <Link className={linkClass} href="/#faq" onClick={() => setOpen(false)}>FAQ</Link>
-            <a
-              href="https://calendly.com/daily_dose_japanese/roadmap_session"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/plans"
               className="btn btn-sm px-3 fw-bold align-self-start"
               style={buttonStyle}
-              onClick={() => track('Book Session', { location: 'navbar-mobile' })}
+              onClick={() => setOpen(false)}
             >
               Book Session
-            </a>
+            </Link>
           </div>
         </div>
       )}
