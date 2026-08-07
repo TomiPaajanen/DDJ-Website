@@ -263,19 +263,39 @@ export default function Plans() {
           </div>
 
           {/* Deposit box */}
-          <div className="text-center mx-auto p-4" style={{ background: '#3d1f0f', borderRadius: 16, maxWidth: 620 }}>
-            <p className="mb-4" style={{ color: '#e8d5c5', fontSize: '1.05rem' }}>
-              Secure your spot first — $10, applied to your first month.
+          <div
+            className="text-center mx-auto p-4 p-md-5"
+            style={{ background: '#ffffff', borderRadius: 20, maxWidth: 620, border: '1px solid #eadfce', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}
+          >
+            <p className="mb-3 fw-semibold" style={{ color: '#2a1a0e', fontSize: '1.15rem' }}>
+              Secure your spot for just $5
             </p>
+
+            {/* Price row */}
+            <div className="d-flex align-items-center justify-content-center flex-wrap gap-2 gap-md-3 mb-4">
+              <span style={{ color: '#b09b88', fontSize: '1.3rem', textDecoration: 'line-through' }}>$10</span>
+              <span style={{ color: '#b09b88', fontSize: '1.3rem' }}>→</span>
+              <span className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem', lineHeight: 1 }}>$5</span>
+              <span className="d-inline-flex align-items-center gap-1 px-3 py-1" style={{ border: '1px solid #e0cdbb', borderRadius: 20, color: '#7a6a5c', fontSize: '0.85rem' }}>
+                📅 until Aug 15
+              </span>
+            </div>
+
+            {/* Button */}
             <a
-              href="https://buy.stripe.com/3cI00l2sG7A1dk84ug1ZS0v"
+              href="https://buy.stripe.com/fZu28tgjw5rTbc02m81ZS0w"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn fw-bold px-4 py-3"
-              style={{ background: '#c8895f', color: '#fff', border: 'none', borderRadius: 8, fontSize: '1.05rem' }}
+              className="btn fw-bold w-100 py-3"
+              style={{ background: '#c8895f', color: '#fff', border: 'none', borderRadius: 12, fontSize: '1.15rem' }}
             >
-              Pay $10 deposit →
+              Secure my spot →
             </a>
+
+            {/* Final line */}
+            <p className="mb-0 mt-3" style={{ color: '#9a8a7c', fontSize: '0.9rem' }}>
+              🛡️ $5 will be applied to your first month when you enroll
+            </p>
           </div>
 
           {/* Connector line */}
