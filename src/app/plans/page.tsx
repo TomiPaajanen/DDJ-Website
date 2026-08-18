@@ -267,23 +267,21 @@ export default function Plans() {
             className="text-center mx-auto p-4 p-md-5"
             style={{ background: '#ffffff', borderRadius: 20, maxWidth: 620, border: '1px solid #eadfce', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}
           >
-            <p className="mb-3 fw-semibold" style={{ color: '#2a1a0e', fontSize: '1.15rem' }}>
-              Secure your spot for just $5
-            </p>
-
-            {/* Price row */}
-            <div className="d-flex align-items-center justify-content-center flex-wrap gap-2 gap-md-3 mb-4">
-              <span style={{ color: '#b09b88', fontSize: '1.3rem', textDecoration: 'line-through' }}>$10</span>
-              <span style={{ color: '#b09b88', fontSize: '1.3rem' }}>→</span>
-              <span className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem', lineHeight: 1 }}>$5</span>
-              <span className="d-inline-flex align-items-center gap-1 px-3 py-1" style={{ border: '1px solid #e0cdbb', borderRadius: 20, color: '#7a6a5c', fontSize: '0.85rem' }}>
-                📅 until Aug 15
-              </span>
+            {/* Price */}
+            <div className="mb-4">
+              <span className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem', lineHeight: 1 }}>$10</span>
             </div>
 
             {/* Button */}
+            {/*
+              Deposit Stripe links:
+                - Regular  ($10, active below): https://buy.stripe.com/3cI00l2sG7A1dk84ug1ZS0v
+                - Campaign ($5 early-bird):     https://buy.stripe.com/fZu28tgjw5rTbc02m81ZS0w
+              When running the promo, swap the href to the campaign link and restore the
+              $5 pricing/copy above.
+            */}
             <a
-              href="https://buy.stripe.com/fZu28tgjw5rTbc02m81ZS0w"
+              href="https://buy.stripe.com/3cI00l2sG7A1dk84ug1ZS0v"
               target="_blank"
               rel="noopener noreferrer"
               className="btn fw-bold w-100 py-3"
@@ -294,7 +292,7 @@ export default function Plans() {
 
             {/* Final line */}
             <p className="mb-0 mt-3" style={{ color: '#9a8a7c', fontSize: '0.9rem' }}>
-              🛡️ $5 will be applied to your first month when you enroll
+              🛡️ $10 will be applied to your first month when you enroll
             </p>
           </div>
 
