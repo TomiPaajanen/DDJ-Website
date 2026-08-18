@@ -267,11 +267,6 @@ export default function Plans() {
             className="text-center mx-auto p-4 p-md-5"
             style={{ background: '#ffffff', borderRadius: 20, maxWidth: 620, border: '1px solid #eadfce', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}
           >
-            {/* Price */}
-            <div className="mb-4">
-              <span className="fw-bold" style={{ color: '#2a1a0e', fontSize: '2.5rem', lineHeight: 1 }}>$10</span>
-            </div>
-
             {/* Button */}
             {/*
               Deposit Stripe links:
@@ -287,7 +282,7 @@ export default function Plans() {
               className="btn fw-bold w-100 py-3"
               style={{ background: '#c8895f', color: '#fff', border: 'none', borderRadius: 12, fontSize: '1.15rem' }}
             >
-              Secure my spot →
+              Secure my spot for $10 →
             </a>
 
             {/* Final line */}
