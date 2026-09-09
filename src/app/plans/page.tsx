@@ -267,6 +267,13 @@ export default function Plans() {
             className="text-center mx-auto p-4 p-md-5"
             style={{ background: '#ffffff', borderRadius: 20, maxWidth: 620, border: '1px solid #eadfce', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}
           >
+              {/* Price */}
+          <div className="d-flex align-items-center justify-content-center gap-2 mb-3">
+            <span style={{ fontSize: '1.4rem', color: '#b0a08f', textDecoration: 'line-through' }}>$10</span>
+            <span style={{ fontSize: '1.4rem', color: '#b0a08f' }}>→</span>
+            <span className="fw-bold" style={{ fontSize: '2.2rem', color: DARK }}>$5</span>
+          </div>
+        
             {/* Button */}
             {/*
               Deposit Stripe links:
@@ -276,18 +283,18 @@ export default function Plans() {
               $5 pricing/copy above.
             */}
             <a
-              href="https://buy.stripe.com/3cI00l2sG7A1dk84ug1ZS0v"
+              href="https://buy.stripe.com/fZu28tgjw5rTbc02m81ZS0w"
               target="_blank"
               rel="noopener noreferrer"
               className="btn fw-bold w-100 py-3"
               style={{ background: '#c8895f', color: '#fff', border: 'none', borderRadius: 12, fontSize: '1.15rem' }}
             >
-              Secure my spot for $10 →
+              Secure my spot →
             </a>
 
             {/* Final line */}
             <p className="mb-0 mt-3" style={{ color: '#9a8a7c', fontSize: '0.9rem' }}>
-              🛡️ $10 will be applied to your first month when you enroll
+              🛡️ $5 will be applied to your first month when you enroll
             </p>
           </div>
 
