@@ -18,7 +18,7 @@ const teachers = [
     location: 'Canada',
     badge: 'Structured & Fun',
     specialties: ['5 years teaching experience', 'Structured learning', 'Expat experience'],
-    perfectFor: 'Learners who want organized, step-by-step lessons',
+    video: 'yuki-sensei.mp4',
   },
   {
     name: 'Nanaka',
@@ -26,7 +26,7 @@ const teachers = [
     location: 'Japan',
     badge: 'Beginner-Friendly',
     specialties: ['Absolute beginners', 'Grammar in English'],
-    perfectFor: 'Complete beginners who want clear English explanations',
+    video: 'nanaka-sensei.mp4',
   },
   {
     name: 'Riko',
@@ -34,7 +34,7 @@ const teachers = [
     location: 'Japan',
     badge: 'Casual & Modern',
     specialties: ['Casual conversation', 'Youth slang'],
-    perfectFor: 'Learners who want to sound natural — not textbook Japanese',
+    video: 'riko-sensei.mp4',
   },
   {
     name: 'Airi',
@@ -42,7 +42,7 @@ const teachers = [
     location: 'Japan',
     badge: 'Flexible Schedule',
     specialties: ['Natural conversation', 'Midweek & weekends'],
-    perfectFor: 'Busy learners who need flexible midweek or weekend slots',
+    video: 'airi-sensei.mp4',
   },
   {
     name: 'Kanata',
@@ -50,7 +50,7 @@ const teachers = [
     location: 'Japan',
     badge: 'Visual Learners',
     specialties: ['Visual teaching', 'Motivation', 'Former elementary teacher'],
-    perfectFor: 'Visual learners and anyone who struggled with traditional methods',
+    video: 'kanata-sensei.mp4',
   },
 ];
 
@@ -127,10 +127,22 @@ export default function Teachers() {
                   </div>
                 </div>
 
-                {/* Perfect for */}
-                <div className="col-12 col-md-5">
-                  <p className="mb-2 fw-semibold" style={{ color: '#9a8a7c', fontSize: '0.7rem', letterSpacing: '0.1em' }}>PERFECT FOR</p>
-                  <p className="mb-0" style={{ color: '#3a2c22', fontSize: '0.95rem', lineHeight: 1.6 }}>{t.perfectFor}</p>
+                {/* Intro video */}
+                <div className="col-12 col-md-5 mt-md-4">
+                  <video
+                    src={`/${t.video}`}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label={`${t.name} sensei introduction video`}
+                    style={{
+                      display: 'block',
+                      width: '100%',
+                      aspectRatio: '16 / 9',
+                      background: '#000',
+                      borderRadius: 12,
+                    }}
+                  />
                 </div>
               </div>
             </div>
